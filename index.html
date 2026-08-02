@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Estimasi & Booking — RenovKita</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div id="app-header"></div>
+
+<main class="container">
+  <a class="back-link" id="back-link" href="/cari.html">&larr; Kembali</a>
+
+  <div class="section-head" style="margin-top:10px;">
+    <h2>Estimasi Biaya Renovasi</h2>
+  </div>
+  <p id="vendor-target" style="color:var(--muted); font-size:14px; margin-top:-8px;"></p>
+
+  <div class="form-card">
+    <form id="estimate-form">
+      <div class="form-row">
+        <label>Jenis Jasa</label>
+        <select id="service-type">
+          <option>Renovasi Dapur</option>
+          <option>Renovasi Kamar Mandi</option>
+          <option>Perbaikan Atap</option>
+          <option>Cat & Finishing</option>
+          <option>Renovasi Total</option>
+        </select>
+      </div>
+
+      <div class="form-row" style="display:flex; gap:14px;">
+        <div style="flex:1;">
+          <label>Luas Area (m²)</label>
+          <input type="number" id="area" value="12" min="1" />
+        </div>
+        <div style="flex:1;">
+          <label>Kualitas Material</label>
+          <select id="quality">
+            <option value="standar">Standar</option>
+            <option value="menengah" selected>Menengah</option>
+            <option value="premium">Premium</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Unggah Foto Ruangan</label>
+        <div class="upload-box">
+          📷 Tambah 3–5 foto kondisi ruangan saat ini<br />
+          <span style="font-size:11px;">(fitur unggah — simulasi UI, belum aktif di MVP ini)</span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-block">Hitung Estimasi</button>
+    </form>
+
+    <div class="estimate-result" id="estimate-result" style="display:none;">
+      <div class="estimate-row"><span>Material</span><span id="res-material"></span></div>
+      <div class="estimate-row"><span>Jasa tukang</span><span id="res-jasa"></span></div>
+      <div class="estimate-total"><span>Total estimasi</span><span id="res-total"></span></div>
+      <p style="font-size:11px;color:var(--muted); margin-top:8px;">
+        *Estimasi awal, dapat berubah setelah survei lokasi langsung oleh vendor.
+      </p>
+      <a class="btn btn-block" href="/proyek.html" style="margin-top:12px;">Ajukan ke Vendor &rarr;</a>
+      <p style="font-size:11px;color:var(--muted); text-align:center; margin-top:8px;">
+        🔒 Dana ditahan aman (escrow) sampai progress dikonfirmasi
+      </p>
+    </div>
+  </div>
+</main>
+
+<div id="app-footer"></div>
+
+<script src="/js/layout.js"></script>
+<script src="/js/estimasi.js"></script>
+</body>
+</html>
