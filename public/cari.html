@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cari Vendor — RenovKita</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div id="app-header"></div>
+
+<main class="container">
+  <a class="back-link" href="/">&larr; Kembali ke beranda</a>
+
+  <div class="section-head" style="margin-top:10px;">
+    <h2 id="result-title">Semua Vendor</h2>
+    <span id="result-count" style="font-size:13px;color:var(--muted);"></span>
+  </div>
+
+  <div class="search-layout">
+    <aside class="filter-box">
+      <h4>Kategori</h4>
+      <div id="filter-categories"></div>
+
+      <h4 style="margin-top:18px;">Urutkan</h4>
+      <div class="filter-option">
+        <input type="radio" name="sort" value="rating" id="sort-rating" checked />
+        <label for="sort-rating">Rating tertinggi</label>
+      </div>
+      <div class="filter-option">
+        <input type="radio" name="sort" value="distance" id="sort-distance" />
+        <label for="sort-distance">Terdekat</label>
+      </div>
+      <div class="filter-option">
+        <input type="radio" name="sort" value="price" id="sort-price" />
+        <label for="sort-price">Harga termurah</label>
+      </div>
+
+      <h4 style="margin-top:18px;">Lainnya</h4>
+      <div class="filter-option">
+        <input type="checkbox" id="filter-verified" />
+        <label for="filter-verified">Hanya vendor terverifikasi</label>
+      </div>
+    </aside>
+
+    <div class="vendor-grid" id="vendor-results"></div>
+  </div>
+</main>
+
+<div id="app-footer"></div>
+
+<script src="/js/layout.js"></script>
+<script src="/js/cari.js"></script>
+</body>
+</html>
