@@ -1,7 +1,7 @@
 {
-  "name": "renovkita-webapp",
+  "name": "renovkita-company-site",
   "version": "1.0.0",
-  "description": "Marketplace renovasi properti - web app MVP",
+  "description": "Website perusahaan renovasi - profil, portofolio, dan estimasi cepat",
   "main": "server.js",
   "engines": {
     "node": ">=18.0.0"

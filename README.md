@@ -1,52 +1,53 @@
-# RenovKita — Web App Marketplace Renovasi Properti
+# RenovKita — Website Perusahaan Renovasi (Company Profile)
 
-MVP web app untuk marketplace renovasi properti. Dibangun dengan **Node.js + Express**
-(server ringan, tanpa framework frontend/build step) supaya mudah dan cepat di-deploy.
+Versi ini **bukan marketplace multi-vendor** — ini website untuk perusahaan renovasi Anda
+sendiri. Tujuannya: tunjukkan layanan & portofolio, kasih estimasi biaya cepat, lalu arahkan
+calon klien langsung chat ke WhatsApp bisnis Anda.
 
-Struktur alur: Beranda → Cari Vendor → Detail Vendor → Estimasi & Booking → Proyek Saya (progress tracker).
-Gaya visual terinspirasi struktur e-commerce seperti Woolworths.com.au (header sticky + search bar,
-hero promo carousel, grid kategori, kartu produk/vendor) — warna diadaptasi ke tema renovasi
-(hijau tua = trust/brand, oranye = konstruksi/CTA).
+## ⚠️ Wajib Diubah Sebelum Publish
 
-## Struktur Proyek
+Buka file `data/db.json`, ganti bagian `"company"` dengan data asli Anda:
 
-```
-reno-webapp/
-├── server.js          # Express server + API endpoints
-├── package.json
-├── data/
-│   └── db.json        # Mock data (vendor, kategori, promo, proyek)
-└── public/             # Semua file frontend (static)
-    ├── index.html       # Beranda
-    ├── cari.html         # Cari & filter vendor
-    ├── vendor.html        # Detail vendor
-    ├── estimasi.html       # Form estimasi & booking
-    ├── proyek.html          # Progress tracker proyek
-    ├── css/style.css
-    └── js/
-        ├── layout.js    # Header/footer bersama
-        ├── home.js
-        ├── cari.js
-        ├── vendor.js
-        ├── estimasi.js
-        └── proyek.js
+```json
+"company": {
+  "name": "RenovKita",
+  "phone": "0812-3456-7890",
+  "whatsapp": "6281234567890",   ← PENTING: format 62xxx tanpa tanda + atau 0 di depan
+  "email": "halo@renovkita.id",
+  "address": "Tangerang, Banten",
+  ...
+}
 ```
 
-## API Endpoints (mock, siap diganti ke database asli nanti)
+Nomor `whatsapp` ini yang dipakai tombol WA mengambang, footer, dan form estimasi — kalau
+tidak diganti, semua chat akan terkirim ke nomor contoh, bukan ke Anda.
 
-| Method | Endpoint | Keterangan |
-|---|---|---|
-| GET | `/api/categories` | Daftar kategori jasa |
-| GET | `/api/promos` | Banner promo untuk hero carousel |
-| GET | `/api/vendors?category=&q=&sort=` | Cari/filter vendor |
-| GET | `/api/vendors/:id` | Detail satu vendor |
-| GET | `/api/projects` | Daftar proyek user |
-| GET | `/api/projects/:id` | Detail satu proyek |
-| POST | `/api/estimate` | Hitung estimasi biaya `{ areaM2, quality }` |
+Ganti juga isi `services`, `portfolio`, dan `testimonials` sesuai layanan dan proyek asli
+perusahaan Anda (harga, lokasi, cerita proyek, dll).
 
-Saat ini data disimpan di `data/db.json` (file JSON statis). Ini sengaja dibuat sederhana
-untuk tahap MVP — ganti fungsi `loadDb()` di `server.js` dengan query ke PostgreSQL/Supabase
-saat siap naik ke tahap produksi (lihat diskusi database sebelumnya).
+## Alur Utama
+
+```
+Beranda → Lihat Layanan/Portofolio → Isi Estimasi Cepat →
+Klik "Kirim ke WhatsApp" → Chat langsung ke nomor bisnis Anda
+```
+
+Form di halaman **Estimasi Cepat** (`/estimasi.html`) menghitung estimasi otomatis, lalu
+menyusun pesan WhatsApp yang sudah terisi (nama, no HP, jenis layanan, luas area, lokasi,
+catatan, dan hasil estimasi) — tinggal klik kirim.
+
+## Struktur Halaman
+
+```
+public/
+├── index.html        # Beranda: hero, layanan, portofolio, testimoni
+├── layanan.html        # Semua layanan lengkap
+├── portofolio.html      # Galeri proyek + filter kategori
+├── tentang.html           # Profil perusahaan, legalitas, area layanan
+└── estimasi.html           # Form estimasi cepat → kirim ke WhatsApp
+```
+
+Tombol WhatsApp mengambang (pojok kanan bawah) muncul di semua halaman.
 
 ## Menjalankan di Lokal
 
@@ -58,54 +59,29 @@ npm start
 
 ## Deploy ke GitHub + Render
 
-### 1. Push ke GitHub
+Sama seperti sebelumnya:
 
 ```bash
-cd reno-webapp
+cd renovkita-company
 git init
 git add .
-git commit -m "Initial commit: RenovKita MVP web app"
+git commit -m "Initial commit: RenovKita company profile site"
 git branch -M main
 git remote add origin https://github.com/USERNAME/NAMA-REPO.git
 git push -u origin main
 ```
 
-Ganti `USERNAME/NAMA-REPO` dengan repo GitHub yang sudah kamu buat (buat repo kosong dulu di
-github.com, jangan centang "initialize with README").
+Di Render.com:
+1. **New +** → **Web Service** → connect repo ini
+2. Build Command: `npm install`
+3. Start Command: `npm start`
+4. Root Directory: **kosongkan** (biarkan default)
+5. Create Web Service
 
-### 2. Deploy di Render
+## Yang Masih Bisa Dikembangkan
 
-1. Buka [render.com](https://render.com) → login/daftar (bisa pakai akun GitHub langsung)
-2. Klik **New +** → **Web Service**
-3. Pilih **Build and deploy from a Git repository** → hubungkan akun GitHub → pilih repo ini
-4. Isi konfigurasi:
-   - **Name**: `renovkita` (atau nama lain, ini jadi bagian URL)
-   - **Region**: Singapore (paling dekat ke Indonesia)
-   - **Branch**: `main`
-   - **Runtime**: Node
-   - **Build Command**: `npm install`
-   - **Start Command**: `npm start`
-   - **Instance Type**: Free (cukup untuk demo/MVP)
-5. Klik **Create Web Service**
-
-Render akan otomatis build & deploy. Setelah selesai (1-3 menit), aplikasi bisa diakses di
-URL seperti `https://renovkita.onrender.com`.
-
-### 3. Auto-deploy selanjutnya
-
-Setiap kali kamu `git push` ke branch `main`, Render otomatis re-deploy versi terbaru.
-Tidak perlu setup ulang.
-
-> **Catatan free tier Render**: instance gratis akan "tidur" setelah ~15 menit tanpa traffic,
-> dan butuh beberapa detik untuk "bangun" lagi saat diakses. Untuk demo ke calon investor/user,
-> buka link beberapa menit sebelumnya supaya sudah aktif.
-
-## Yang Masih Perlu Dikembangkan (di luar MVP ini)
-
-- Autentikasi user & vendor (login/register)
-- Database sungguhan (PostgreSQL/Supabase) menggantikan `db.json`
-- Upload foto asli (saat ini UI unggah foto masih simulasi/belum aktif)
-- Sistem pembayaran escrow sungguhan (integrasi payment gateway: Midtrans/Xendit)
-- Chat real-time vendor-user
-- Halaman-halaman placeholder (Bantuan, Tentang, Syarat & Ketentuan, dll — saat ini
-  fallback ke beranda karena belum dibuat)
+- Ganti foto placeholder (📷 emoji) dengan foto asli proyek — bisa pakai folder
+  `public/images/` lalu ganti tag di `portofolio.js`/`home.js`
+- Tambah Google Analytics untuk lihat berapa orang isi form estimasi
+- Daftarkan di Google Business Profile supaya muncul di pencarian lokal & Google Maps
+- Custom domain (misal `renovkita.id`) lewat Render Settings → Custom Domain
