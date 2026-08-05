@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Estimasi & Booking — RenovKita</title>
+<title>Estimasi Cepat — RenovKita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
@@ -11,34 +14,38 @@
 <div id="app-header"></div>
 
 <main class="container">
-  <a class="back-link" id="back-link" href="/cari.html">&larr; Kembali</a>
-
-  <div class="section-head" style="margin-top:10px;">
-    <h2>Estimasi Biaya Renovasi</h2>
+  <div class="section-head" style="margin-top:24px;">
+    <div>
+      <h2>Estimasi Renovasi Cepat</h2>
+      <p class="subtitle">Isi form singkat ini, dapatkan gambaran biaya, lalu kirim langsung ke tim kami via WhatsApp</p>
+    </div>
   </div>
-  <p id="vendor-target" style="color:var(--muted); font-size:14px; margin-top:-8px;"></p>
 
   <div class="form-card">
     <form id="estimate-form">
       <div class="form-row">
-        <label>Jenis Jasa</label>
-        <select id="service-type">
-          <option>Renovasi Dapur</option>
-          <option>Renovasi Kamar Mandi</option>
-          <option>Perbaikan Atap</option>
-          <option>Cat & Finishing</option>
-          <option>Renovasi Total</option>
-        </select>
+        <label>Nama Lengkap</label>
+        <input type="text" id="f-name" required placeholder="Nama Anda" />
       </div>
 
-      <div class="form-row" style="display:flex; gap:14px;">
-        <div style="flex:1;">
+      <div class="form-row">
+        <label>Nomor WhatsApp</label>
+        <input type="tel" id="f-phone" required placeholder="08xxxxxxxxxx" />
+      </div>
+
+      <div class="form-row">
+        <label>Jenis Layanan</label>
+        <select id="f-service"></select>
+      </div>
+
+      <div class="form-row-split form-row">
+        <div>
           <label>Luas Area (m²)</label>
-          <input type="number" id="area" value="12" min="1" />
+          <input type="number" id="f-area" value="12" min="1" />
         </div>
-        <div style="flex:1;">
+        <div>
           <label>Kualitas Material</label>
-          <select id="quality">
+          <select id="f-quality">
             <option value="standar">Standar</option>
             <option value="menengah" selected>Menengah</option>
             <option value="premium">Premium</option>
@@ -47,27 +54,28 @@
       </div>
 
       <div class="form-row">
-        <label>Unggah Foto Ruangan</label>
-        <div class="upload-box">
-          📷 Tambah 3–5 foto kondisi ruangan saat ini<br />
-          <span style="font-size:11px;">(fitur unggah — simulasi UI, belum aktif di MVP ini)</span>
-        </div>
+        <label>Lokasi Properti</label>
+        <input type="text" id="f-location" placeholder="Misal: Gading Serpong, Tangerang" />
+      </div>
+
+      <div class="form-row">
+        <label>Catatan Tambahan (opsional)</label>
+        <textarea id="f-notes" rows="3" placeholder="Ceritakan kondisi ruangan atau kebutuhan khusus..."></textarea>
       </div>
 
       <button type="submit" class="btn btn-block">Hitung Estimasi</button>
     </form>
 
-    <div class="estimate-result" id="estimate-result" style="display:none;">
-      <div class="estimate-row"><span>Material</span><span id="res-material"></span></div>
-      <div class="estimate-row"><span>Jasa tukang</span><span id="res-jasa"></span></div>
+    <div class="estimate-result" id="estimate-result" style="display:none; margin-top:18px;">
+      <div class="estimate-row"><span>Estimasi material</span><span id="res-material"></span></div>
+      <div class="estimate-row"><span>Estimasi jasa tukang</span><span id="res-jasa"></span></div>
       <div class="estimate-total"><span>Total estimasi</span><span id="res-total"></span></div>
       <p style="font-size:11px;color:var(--muted); margin-top:8px;">
-        *Estimasi awal, dapat berubah setelah survei lokasi langsung oleh vendor.
+        *Estimasi awal berdasarkan rata-rata harga. Harga final ditentukan setelah survei lokasi gratis.
       </p>
-      <a class="btn btn-block" href="/proyek.html" style="margin-top:12px;">Ajukan ke Vendor &rarr;</a>
-      <p style="font-size:11px;color:var(--muted); text-align:center; margin-top:8px;">
-        🔒 Dana ditahan aman (escrow) sampai progress dikonfirmasi
-      </p>
+      <a id="wa-submit" class="btn btn-wa btn-block" href="#" target="_blank" rel="noopener" style="margin-top:14px;">
+        💬 Kirim Estimasi ke WhatsApp Kami
+      </a>
     </div>
   </div>
 </main>

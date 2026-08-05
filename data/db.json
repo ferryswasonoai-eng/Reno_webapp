@@ -1,157 +1,156 @@
 {
-  "categories": [
-    { "id": "dapur", "name": "Dapur", "icon": "🍳", "desc": "Renovasi & desain ulang dapur" },
-    { "id": "kamar-mandi", "name": "Kamar Mandi", "icon": "🚿", "desc": "Waterproofing, keramik, sanitasi" },
-    { "id": "atap", "name": "Atap & Plafon", "icon": "🏠", "desc": "Bocor, ganti genteng, plafon" },
-    { "id": "cat", "name": "Cat & Finishing", "icon": "🎨", "desc": "Interior & eksterior" },
-    { "id": "lantai", "name": "Lantai", "icon": "🧱", "desc": "Keramik, vinyl, parket" },
-    { "id": "taman", "name": "Taman & Eksterior", "icon": "🌿", "desc": "Landscaping, pagar, carport" },
-    { "id": "listrik", "name": "Listrik & AC", "icon": "💡", "desc": "Instalasi, perbaikan" },
-    { "id": "kontraktor", "name": "Kontraktor Umum", "icon": "🏗️", "desc": "Renovasi total rumah" }
-  ],
+  "company": {
+    "name": "RenovKita",
+    "tagline": "Renovasi Rumah & Properti, Cepat, Rapi, dan Sesuai Anggaran",
+    "phone": "0812-3456-7890",
+    "whatsapp": "6281234567890",
+    "email": "halo@renovkita.id",
+    "address": "Tangerang, Banten",
+    "yearsExperience": 8,
+    "projectsCompleted": 150,
+    "foundedYear": 2018,
+    "serviceAreas": ["Tangerang", "Serpong", "BSD City", "Alam Sutera", "Ciledug"]
+  },
   "promos": [
     {
       "id": 1,
-      "title": "Diskon jasa survei 100%",
-      "subtitle": "Gratis survei lokasi untuk renovasi dapur & kamar mandi bulan ini",
-      "cta": "Lihat Promo",
+      "title": "Survei Lokasi Gratis Bulan Ini",
+      "subtitle": "Untuk renovasi dapur & kamar mandi, tanpa biaya survei",
+      "cta": "Ajukan Estimasi",
       "bg": "#145A32"
     },
     {
       "id": 2,
-      "title": "Vendor Terverifikasi Minggu Ini",
-      "subtitle": "20+ kontraktor baru lolos verifikasi legalitas & portofolio",
-      "cta": "Jelajahi Vendor",
+      "title": "150+ Proyek Selesai Sejak 2018",
+      "subtitle": "Dikerjakan tim berpengalaman dengan garansi tertulis",
+      "cta": "Lihat Portofolio",
       "bg": "#8A3B12"
     },
     {
       "id": 3,
-      "title": "Cicilan 0% hingga 6 bulan",
+      "title": "Cicilan 0% hingga 6 Bulan",
       "subtitle": "Untuk proyek renovasi di atas Rp 15 juta lewat mitra pembiayaan",
       "cta": "Pelajari",
       "bg": "#1B2A4A"
     }
   ],
-  "vendors": [
+  "services": [
     {
-      "id": "v001",
-      "name": "Surya Konstruksi",
-      "category": "kontraktor",
-      "tags": ["Kontraktor Umum", "Renovasi Total"],
-      "rating": 4.8,
-      "reviews": 132,
-      "jobs": 132,
-      "distanceKm": 1.2,
-      "verified": true,
-      "priceFrom": 5000000,
-      "location": "Tangerang, Banten",
-      "since": 2018,
-      "portfolio": 12,
-      "bio": "Kontraktor umum berpengalaman 8 tahun, fokus renovasi rumah tinggal skala kecil-menengah dengan sistem pembayaran bertahap sesuai progress.",
-      "services": ["Renovasi dapur", "Kamar mandi", "Atap & plafon", "Pengecatan"]
+      "id": "dapur",
+      "name": "Renovasi Dapur",
+      "icon": "🍳",
+      "desc": "Kitchen set custom, tata ulang layout, upgrade instalasi air & listrik",
+      "priceFrom": 8000000
     },
     {
-      "id": "v002",
-      "name": "Bengkel Kayu Jaya",
-      "category": "dapur",
-      "tags": ["Spesialis Interior", "Kabinet Custom"],
-      "rating": 4.7,
-      "reviews": 88,
-      "jobs": 88,
-      "distanceKm": 2.1,
-      "verified": true,
-      "priceFrom": 8000000,
-      "location": "Tangerang, Banten",
-      "since": 2015,
-      "portfolio": 20,
-      "bio": "Spesialis kabinet dapur dan furnitur custom dengan material kayu solid & multiplek lapis HPL.",
-      "services": ["Kitchen set", "Lemari custom", "Island counter"]
+      "id": "kamar-mandi",
+      "name": "Renovasi Kamar Mandi",
+      "icon": "🚿",
+      "desc": "Waterproofing, ganti keramik, sanitasi, atasi bocor & rembes",
+      "priceFrom": 5000000
     },
     {
-      "id": "v003",
-      "name": "Tukang Andi",
-      "category": "cat",
-      "tags": ["Cat & Finishing"],
-      "rating": 4.5,
-      "reviews": 41,
-      "jobs": 41,
-      "distanceKm": 3.4,
-      "verified": false,
-      "priceFrom": 1500000,
-      "location": "Serpong, Tangerang",
-      "since": 2021,
-      "portfolio": 6,
-      "bio": "Jasa cat interior & eksterior rumah, harga per meter persegi, garansi 6 bulan.",
-      "services": ["Cat interior", "Cat eksterior", "Waterproofing dinding"]
+      "id": "atap",
+      "name": "Atap & Plafon",
+      "icon": "🏠",
+      "desc": "Perbaikan atap bocor, ganti rangka baja ringan, plafon gypsum/PVC",
+      "priceFrom": 4000000
     },
     {
-      "id": "v004",
-      "name": "Aqua Waterproof",
-      "category": "kamar-mandi",
-      "tags": ["Waterproofing", "Kamar Mandi"],
-      "rating": 4.9,
-      "reviews": 204,
-      "jobs": 204,
-      "distanceKm": 4.0,
-      "verified": true,
-      "priceFrom": 3000000,
-      "location": "Alam Sutera, Tangerang",
-      "since": 2012,
-      "portfolio": 34,
-      "bio": "Spesialis anti bocor & renovasi kamar mandi dengan garansi tertulis hingga 5 tahun.",
-      "services": ["Waterproofing", "Renovasi kamar mandi", "Perbaikan pipa bocor"]
+      "id": "cat",
+      "name": "Cat & Finishing",
+      "icon": "🎨",
+      "desc": "Cat interior & eksterior, garansi warna hingga 2 tahun",
+      "priceFrom": 2000000
     },
     {
-      "id": "v005",
-      "name": "Hijau Landscape",
-      "category": "taman",
-      "tags": ["Taman", "Eksterior"],
-      "rating": 4.6,
-      "reviews": 57,
-      "jobs": 57,
-      "distanceKm": 5.5,
-      "verified": true,
-      "priceFrom": 4000000,
-      "location": "BSD City, Tangerang",
-      "since": 2019,
-      "portfolio": 18,
-      "bio": "Desain dan pembangunan taman minimalis, carport, dan pagar rumah tinggal.",
-      "services": ["Desain taman", "Carport", "Pagar & gerbang"]
+      "id": "lantai",
+      "name": "Lantai",
+      "icon": "🧱",
+      "desc": "Pemasangan keramik, vinyl, parket, dan pengecoran ulang",
+      "priceFrom": 3000000
     },
     {
-      "id": "v006",
-      "name": "Cipta Atap Sentosa",
-      "category": "atap",
-      "tags": ["Atap", "Plafon"],
-      "rating": 4.7,
-      "reviews": 73,
-      "jobs": 73,
-      "distanceKm": 2.8,
-      "verified": true,
-      "priceFrom": 3500000,
-      "location": "Ciledug, Tangerang",
-      "since": 2016,
-      "portfolio": 15,
-      "bio": "Penanganan atap bocor, ganti rangka baja ringan, dan pemasangan plafon PVC/gypsum.",
-      "services": ["Perbaikan atap bocor", "Rangka baja ringan", "Plafon gypsum/PVC"]
+      "id": "taman",
+      "name": "Taman & Eksterior",
+      "icon": "🌿",
+      "desc": "Desain taman minimalis, carport, pagar & gerbang rumah",
+      "priceFrom": 4000000
+    },
+    {
+      "id": "listrik",
+      "name": "Listrik & Instalasi",
+      "icon": "💡",
+      "desc": "Instalasi ulang, tambah daya, perbaikan panel listrik",
+      "priceFrom": 2500000
+    },
+    {
+      "id": "total",
+      "name": "Renovasi Total Rumah",
+      "icon": "🏗️",
+      "desc": "Renovasi menyeluruh dari struktur hingga finishing",
+      "priceFrom": 50000000
     }
   ],
-  "projects": [
+  "portfolio": [
     {
-      "id": "p001",
-      "title": "Renovasi Dapur",
-      "address": "Jl. Kenanga No. 8, Tangerang",
-      "vendorId": "v001",
-      "vendorName": "Surya Konstruksi",
-      "progress": 60,
-      "total": 27500000,
-      "steps": [
-        { "label": "Survei lokasi", "date": "2 Ags 2026", "status": "done" },
-        { "label": "Pembongkaran", "date": "5 Ags 2026", "status": "done" },
-        { "label": "Instalasi pipa & listrik", "date": "9 Ags 2026", "status": "active" },
-        { "label": "Pemasangan kabinet", "date": "Estimasi 14 Ags 2026", "status": "pending" },
-        { "label": "Finishing & QC", "date": "Estimasi 18 Ags 2026", "status": "pending" }
-      ]
+      "id": "pf001",
+      "title": "Renovasi Dapur Modern",
+      "category": "Dapur",
+      "location": "Gading Serpong",
+      "duration": "3 minggu",
+      "budget": "Rp 25 - 30 juta",
+      "desc": "Ubah dapur tertutup jadi open kitchen dengan island counter dan kabinet custom."
+    },
+    {
+      "id": "pf002",
+      "title": "Perbaikan Total Kamar Mandi",
+      "category": "Kamar Mandi",
+      "location": "BSD City",
+      "duration": "2 minggu",
+      "budget": "Rp 12 - 15 juta",
+      "desc": "Atasi masalah rembes kronis, waterproofing menyeluruh, ganti keramik & sanitasi."
+    },
+    {
+      "id": "pf003",
+      "title": "Renovasi Atap Bocor",
+      "category": "Atap",
+      "location": "Ciledug",
+      "duration": "1.5 minggu",
+      "budget": "Rp 8 - 10 juta",
+      "desc": "Ganti rangka atap yang lapuk dengan baja ringan, pasang ulang genteng dan plafon."
+    },
+    {
+      "id": "pf004",
+      "title": "Cat Ulang Rumah 2 Lantai",
+      "category": "Cat & Finishing",
+      "location": "Alam Sutera",
+      "duration": "1 minggu",
+      "budget": "Rp 6 - 8 juta",
+      "desc": "Cat eksterior dan interior rumah 2 lantai, termasuk perbaikan retak rambut dinding."
+    },
+    {
+      "id": "pf005",
+      "title": "Renovasi Total Rumah Tinggal",
+      "category": "Renovasi Total",
+      "location": "Serpong",
+      "duration": "3 bulan",
+      "budget": "Rp 180 - 220 juta",
+      "desc": "Renovasi menyeluruh rumah 1 lantai jadi 2 lantai, termasuk perkuatan struktur."
+    },
+    {
+      "id": "pf006",
+      "title": "Penataan Taman & Carport",
+      "category": "Taman & Eksterior",
+      "location": "Gading Serpong",
+      "duration": "1 minggu",
+      "budget": "Rp 10 - 12 juta",
+      "desc": "Desain taman minimalis depan rumah lengkap dengan carport dan pagar baru."
     }
+  ],
+  "testimonials": [
+    { "name": "Dewi A.", "location": "Gading Serpong", "text": "Rapi, tepat waktu, sesuai estimasi dari awal. Komunikasi juga enak, selalu update progress." },
+    { "name": "Budi H.", "location": "BSD City", "text": "Masalah bocor kamar mandi yang sudah 2 tahun akhirnya beres total, garansi juga jelas." },
+    { "name": "Rina S.", "location": "Alam Sutera", "text": "Hasil dapur barunya rapi banget, sesuai gambar 3D yang dikasih di awal." }
   ]
 }

@@ -3,53 +3,90 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>RenovKita — Marketplace Renovasi Properti Terpercaya</title>
+<title>RenovKita — Jasa Renovasi Rumah & Properti Terpercaya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 
 <div id="app-header"></div>
 
+<section class="hero-main">
+  <div class="container">
+    <div>
+      <h1>Renovasi Rumah Anda,<br />Cepat, Rapi, Terukur.</h1>
+      <p>Dari perbaikan kecil sampai renovasi total — dapatkan estimasi biaya dalam hitungan menit, dikerjakan tim berpengalaman dengan garansi tertulis.</p>
+      <div class="hero-cta-row">
+        <a class="btn" href="/estimasi.html">Dapatkan Estimasi Cepat &rarr;</a>
+        <a class="btn btn-outline-light" href="/portofolio.html">Lihat Portofolio</a>
+      </div>
+      <div class="hero-stats" id="hero-stats"></div>
+    </div>
+    <div class="hero-visual">🏗️</div>
+  </div>
+</section>
+
 <main class="container">
 
-  <div class="hero" id="hero-slides"></div>
+  <div class="promo-strip" id="promo-strip"></div>
 
   <section class="section">
     <div class="section-head">
-      <h2>Kategori Jasa Renovasi</h2>
-      <a class="link" href="/cari.html">Lihat semua &rarr;</a>
+      <div>
+        <h2>Layanan Kami</h2>
+        <p class="subtitle">Pilih jenis renovasi yang Anda butuhkan</p>
+      </div>
+      <a class="link" href="/layanan.html">Lihat semua &rarr;</a>
     </div>
-    <div class="cat-grid" id="category-grid"></div>
+    <div class="service-grid" id="service-grid"></div>
   </section>
 
   <section class="section">
     <div class="section-head">
-      <h2>Vendor Unggulan di Sekitar Anda</h2>
-      <a class="link" href="/cari.html">Lihat semua &rarr;</a>
+      <div>
+        <h2>Portofolio Terbaru</h2>
+        <p class="subtitle">Sebagian proyek yang sudah kami selesaikan</p>
+      </div>
+      <a class="link" href="/portofolio.html">Lihat semua &rarr;</a>
     </div>
-    <div class="vendor-grid" id="vendor-grid"></div>
+    <div class="portfolio-grid" id="portfolio-grid"></div>
   </section>
 
   <section class="section">
-    <div class="section-head">
-      <h2>Cara Kerja RenovKita</h2>
+    <div class="section-head"><h2>Kenapa Pilih RenovKita</h2></div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">⏱️</div>
+        <h4>Estimasi Cepat</h4>
+        <p>Dapatkan gambaran biaya renovasi dalam hitungan menit, langsung terhubung ke tim kami via WhatsApp.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛡️</div>
+        <h4>Garansi Tertulis</h4>
+        <p>Setiap pekerjaan disertai garansi jelas, bukan janji lisan — ketenangan pikiran untuk Anda.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📸</div>
+        <h4>Progress Terpantau</h4>
+        <p>Update foto & laporan progress berkala selama pengerjaan, tidak perlu was-was menunggu tanpa kabar.</p>
+      </div>
     </div>
-    <div class="steps">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <h4>Cari & Bandingkan Vendor</h4>
-        <p>Telusuri kontraktor terverifikasi berdasarkan kategori jasa, rating, dan lokasi terdekat.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Kata Klien Kami</h2></div>
+    <div class="testi-grid" id="testi-grid"></div>
+  </section>
+
+  <section class="section">
+    <div class="cta-banner">
+      <div>
+        <h3>Siap mulai renovasi rumah Anda?</h3>
+        <p>Isi form estimasi cepat, kami balas via WhatsApp dalam 1x24 jam.</p>
       </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <h4>Ajukan Estimasi & Booking</h4>
-        <p>Isi detail pekerjaan, dapatkan estimasi biaya otomatis, lalu ajukan ke vendor pilihan.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <h4>Pantau Progress Real-time</h4>
-        <p>Dana aman lewat sistem escrow, cair bertahap sesuai progress yang Anda konfirmasi.</p>
-      </div>
+      <a class="btn-white" href="/estimasi.html">Ajukan Estimasi Sekarang &rarr;</a>
     </div>
   </section>
 

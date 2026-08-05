@@ -1,12 +1,13 @@
-// Shared header/footer — dirender via JS supaya semua halaman konsisten
-// tanpa perlu templating engine di sisi server.
+// Shared header/footer/floating WA button — dirender via JS supaya konsisten di semua halaman.
 
-function renderHeader(activePage) {
+let COMPANY = null;
+
+function renderHeader() {
   return `
   <div class="topbar">
     <div class="container">
-      <span>Untuk pemilik rumah & properti di Indonesia</span>
-      <span><a href="/vendor-daftar.html">Daftar sebagai Vendor</a> &nbsp;|&nbsp; <a href="/bantuan.html">Bantuan</a></span>
+      <span>📍 Melayani area Tangerang & sekitarnya</span>
+      <span id="topbar-contact"></span>
     </div>
   </div>
 
@@ -16,32 +17,17 @@ function renderHeader(activePage) {
         <span class="mark">🛠️</span>
         RenovKita
       </a>
-      <form class="search-wrap" onsubmit="event.preventDefault(); window.location.href='/cari.html?q=' + encodeURIComponent(this.q.value)">
-        <input name="q" type="text" placeholder="Cari tukang, kontraktor, atau jasa renovasi..." />
-        <button type="submit">Cari</button>
-      </form>
-      <div class="header-actions">
-        <a class="item" href="/akun.html">
-          <span class="ico">👤</span>
-          Akun
-        </a>
-        <a class="item" href="/proyek.html">
-          <span class="ico">📋</span>
-          Proyek Saya
-        </a>
+      <nav class="main-nav">
+        <a href="/">Beranda</a>
+        <a href="/layanan.html">Layanan</a>
+        <a href="/portofolio.html">Portofolio</a>
+        <a href="/tentang.html">Tentang Kami</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn-header-estimasi" href="/estimasi.html">Estimasi Cepat</a>
       </div>
     </div>
   </header>
-
-  <div class="locationbar">
-    <div class="container">
-      📍 Area layanan: <b>Tangerang, Banten</b> <span class="change">Ubah</span>
-    </div>
-  </div>
-
-  <nav class="navstrip">
-    <div class="container" id="navstrip-links"></div>
-  </nav>
   `;
 }
 
@@ -51,55 +37,72 @@ function renderFooter() {
     <div class="container">
       <div>
         <h5>RenovKita</h5>
+        <p id="footer-tagline"></p>
+        <p id="footer-address"></p>
+      </div>
+      <div>
+        <h5>Navigasi</h5>
+        <a href="/">Beranda</a>
+        <a href="/layanan.html">Layanan Kami</a>
+        <a href="/portofolio.html">Portofolio</a>
         <a href="/tentang.html">Tentang Kami</a>
-        <a href="/karir.html">Karir</a>
-        <a href="/blog.html">Blog Renovasi</a>
       </div>
       <div>
-        <h5>Untuk Pemilik Rumah</h5>
-        <a href="/cari.html">Cari Vendor</a>
-        <a href="/proyek.html">Lacak Proyek</a>
-        <a href="/bantuan.html">Pusat Bantuan</a>
-      </div>
-      <div>
-        <h5>Untuk Vendor</h5>
-        <a href="/vendor-daftar.html">Gabung Jadi Vendor</a>
-        <a href="/vendor-panduan.html">Panduan Vendor</a>
-        <a href="/vendor-biaya.html">Struktur Komisi</a>
-      </div>
-      <div>
-        <h5>Kebijakan</h5>
-        <a href="/syarat.html">Syarat & Ketentuan</a>
-        <a href="/privasi.html">Kebijakan Privasi</a>
-        <a href="/escrow.html">Sistem Pembayaran Escrow</a>
+        <h5>Kontak</h5>
+        <a id="footer-phone" href="#"></a>
+        <a id="footer-email" href="#"></a>
+        <a id="footer-wa" href="#">Chat via WhatsApp</a>
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 RenovKita. Contoh web app (MVP demo) — data bersifat simulasi.
+      © 2026 RenovKita. Website perusahaan renovasi properti.
     </div>
   </footer>
   `;
 }
 
-async function mountLayout() {
-  document.getElementById("app-header").innerHTML = renderHeader();
-  document.getElementById("app-footer").innerHTML = renderFooter();
-
-  try {
-    const res = await fetch("/api/categories");
-    const categories = await res.json();
-    const nav = document.getElementById("navstrip-links");
-    nav.innerHTML = categories
-      .slice(0, 6)
-      .map((c) => `<a href="/cari.html?category=${c.id}">${c.icon} ${c.name}</a>`)
-      .join("");
-  } catch (e) {
-    console.error("Gagal memuat kategori", e);
-  }
+function renderWaFloat() {
+  return `<a id="wa-float" class="wa-float" href="#" target="_blank" rel="noopener">💬</a>`;
 }
 
 function formatRupiah(n) {
   return "Rp " + Number(n).toLocaleString("id-ID");
+}
+
+function buildWaLink(phoneNumber, message) {
+  return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+}
+
+async function mountLayout() {
+  document.getElementById("app-header").innerHTML = renderHeader();
+  document.getElementById("app-footer").innerHTML = renderFooter();
+  document.body.insertAdjacentHTML("beforeend", renderWaFloat());
+
+  try {
+    const res = await fetch("/api/company");
+    COMPANY = await res.json();
+
+    document.getElementById("topbar-contact").innerHTML =
+      `📞 ${COMPANY.phone} &nbsp;|&nbsp; ✉️ ${COMPANY.email}`;
+    document.getElementById("footer-tagline").textContent = COMPANY.tagline;
+    document.getElementById("footer-address").textContent = "📍 " + COMPANY.address;
+    const phoneEl = document.getElementById("footer-phone");
+    phoneEl.textContent = "📞 " + COMPANY.phone;
+    phoneEl.href = "tel:+" + COMPANY.whatsapp;
+    const emailEl = document.getElementById("footer-email");
+    emailEl.textContent = "✉️ " + COMPANY.email;
+    emailEl.href = "mailto:" + COMPANY.email;
+    document.getElementById("footer-wa").href = buildWaLink(
+      COMPANY.whatsapp,
+      "Halo RenovKita, saya ingin tanya-tanya soal renovasi rumah."
+    );
+    document.getElementById("wa-float").href = buildWaLink(
+      COMPANY.whatsapp,
+      "Halo RenovKita, saya ingin tanya-tanya soal renovasi rumah."
+    );
+  } catch (e) {
+    console.error("Gagal memuat data perusahaan", e);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", mountLayout);
