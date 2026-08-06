@@ -65,12 +65,31 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ---------- Hero ---------- */
 .hero-main {
-  background: linear-gradient(135deg, var(--brand) 0%, #1c7a45 100%);
+  position: relative;
   color: #fff;
-  padding: 56px 0;
+  padding: 64px 0;
+  overflow: hidden;
 }
-.hero-main .container {
-  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center;
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg,
+    rgba(14,64,37,0.97) 0%,
+    rgba(15,74,41,0.93) 30%,
+    rgba(20,90,50,0.65) 55%,
+    rgba(20,90,50,0.28) 80%,
+    rgba(20,90,50,0.12) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
 }
 .hero-main h1 { font-size: 36px; line-height: 1.2; margin: 0 0 14px; font-weight: 800; letter-spacing: -0.02em; }
 .hero-main p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 0 22px; line-height: 1.6; }
@@ -80,21 +99,6 @@ button { font-family: inherit; cursor: pointer; }
 }
 .hero-stat .num { font-size: 26px; font-weight: 800; }
 .hero-stat .label { font-size: 12px; opacity: 0.85; }
-.hero-visual {
-  position: relative;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: var(--radius);
-  min-height: 260px;
-  overflow: hidden;
-}
-.hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-visual-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(20,90,50,0.55) 0%, rgba(20,90,50,0.05) 45%, rgba(20,90,50,0) 65%);
-  pointer-events: none;
-}
 
 /* ---------- Promo strip ---------- */
 .promo-strip { display: flex; gap: 14px; overflow-x: auto; padding: 22px 0; }
@@ -272,8 +276,14 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  .hero-main .container { grid-template-columns: 1fr; }
-  .hero-visual { min-height: 160px; }
+  .hero-main { min-height: 420px; padding: 44px 0; }
+  .hero-content { max-width: 100%; }
+  .hero-bg-overlay {
+    background: linear-gradient(180deg,
+      rgba(14,64,37,0.97) 0%,
+      rgba(15,74,41,0.95) 55%,
+      rgba(20,90,50,0.85) 100%);
+  }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
   .portfolio-grid { grid-template-columns: 1fr; }
   .why-grid, .testi-grid { grid-template-columns: 1fr; }
