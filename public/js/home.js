@@ -42,7 +42,7 @@ function serviceCardHtml(s, index) {
 async function loadServices() {
   const res = await fetch("/api/services");
   const services = await res.json();
-  document.getElementById("service-grid").innerHTML = services.slice(0, 4).map(serviceCardHtml).join("");
+  document.getElementById("service-grid").innerHTML = services.slice(0, 3).map(serviceCardHtml).join("");
 }
 
 function portfolioCardHtml(p) {

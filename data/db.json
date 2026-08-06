@@ -47,7 +47,7 @@
       "icon": "icon-kitchen.svg",
       "desc": "Kitchen set custom, tata ulang layout, upgrade instalasi air & listrik",
       "priceFrom": 8000000,
-      "image": "rakit-furniture.jpg",
+      "image": "renovasi-dapur-total.jpg",
       "badge": "Terlaris"
     },
     {
@@ -56,7 +56,7 @@
       "icon": "icon-bathroom.svg",
       "desc": "Waterproofing, ganti keramik, sanitasi, atasi bocor & rembes",
       "priceFrom": 5000000,
-      "image": "handyman.jpg",
+      "image": "perbaikan-kebocoran.jpg",
       "badge": "Anti Bocor"
     },
     {
@@ -65,7 +65,7 @@
       "icon": "icon-roof.svg",
       "desc": "Perbaikan atap bocor, ganti rangka baja ringan, plafon gypsum/PVC",
       "priceFrom": 4000000,
-      "image": "servis-ac.jpg",
+      "image": "kebocoran-atap.jpg",
       "badge": "Respon Cepat"
     },
     {
@@ -74,7 +74,7 @@
       "icon": "icon-paint.svg",
       "desc": "Cat interior & eksterior, garansi warna hingga 2 tahun",
       "priceFrom": 2000000,
-      "image": "rakit-furniture.jpg",
+      "image": "pengecatan-dinding.jpg",
       "badge": "Garansi 2 Thn"
     },
     {
@@ -83,7 +83,7 @@
       "icon": "icon-floor.svg",
       "desc": "Pemasangan keramik, vinyl, parket, dan pengecoran ulang",
       "priceFrom": 3000000,
-      "image": "handyman.jpg",
+      "image": "rakit-furniture.jpg",
       "badge": "Rapi & Kuat"
     },
     {
@@ -92,7 +92,7 @@
       "icon": "icon-garden.svg",
       "desc": "Desain taman minimalis, carport, pagar & gerbang rumah",
       "priceFrom": 4000000,
-      "image": "servis-ac.jpg",
+      "image": "handyman.jpg",
       "badge": "Desain Gratis"
     },
     {
@@ -110,7 +110,7 @@
       "icon": "icon-general.svg",
       "desc": "Renovasi menyeluruh dari struktur hingga finishing",
       "priceFrom": 50000000,
-      "image": "rakit-furniture.jpg",
+      "image": "renovasi-total-2.jpg",
       "badge": "Proyek Besar"
     }
   ],
@@ -123,7 +123,7 @@
       "duration": "3 minggu",
       "budget": "Rp 25 - 30 juta",
       "desc": "Ubah dapur tertutup jadi open kitchen dengan island counter dan kabinet custom.",
-      "image": "rakit-furniture.jpg"
+      "image": "renovasi-dapur-total.jpg"
     },
     {
       "id": "pf002",
@@ -133,7 +133,7 @@
       "duration": "2 minggu",
       "budget": "Rp 12 - 15 juta",
       "desc": "Atasi masalah rembes kronis, waterproofing menyeluruh, ganti keramik & sanitasi.",
-      "image": "handyman.jpg"
+      "image": "perbaikan-kebocoran.jpg"
     },
     {
       "id": "pf003",
@@ -143,7 +143,7 @@
       "duration": "1.5 minggu",
       "budget": "Rp 8 - 10 juta",
       "desc": "Ganti rangka atap yang lapuk dengan baja ringan, pasang ulang genteng dan plafon.",
-      "image": "servis-ac.jpg"
+      "image": "kebocoran-atap.jpg"
     },
     {
       "id": "pf004",
@@ -153,7 +153,7 @@
       "duration": "1 minggu",
       "budget": "Rp 6 - 8 juta",
       "desc": "Cat eksterior dan interior rumah 2 lantai, termasuk perbaikan retak rambut dinding.",
-      "image": "rakit-furniture.jpg"
+      "image": "pengecatan-dinding.jpg"
     },
     {
       "id": "pf005",
@@ -163,7 +163,7 @@
       "duration": "3 bulan",
       "budget": "Rp 180 - 220 juta",
       "desc": "Renovasi menyeluruh rumah 1 lantai jadi 2 lantai, termasuk perkuatan struktur.",
-      "image": "handyman.jpg"
+      "image": "renovasi-total-2.jpg"
     },
     {
       "id": "pf006",
@@ -173,7 +173,7 @@
       "duration": "1 minggu",
       "budget": "Rp 10 - 12 juta",
       "desc": "Desain taman minimalis depan rumah lengkap dengan carport dan pagar baru.",
-      "image": "servis-ac.jpg"
+      "image": "handyman.jpg"
     }
   ],
   "testimonials": [
