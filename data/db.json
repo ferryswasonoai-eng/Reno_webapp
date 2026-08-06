@@ -2,14 +2,20 @@
   "company": {
     "name": "RenovKita",
     "tagline": "Renovasi Rumah & Properti, Cepat, Rapi, dan Sesuai Anggaran",
-    "phone": "0811-72-5511",
-    "whatsapp": "62811725511",
-    "email": "ferry.swasono.ai@gmail.com",
+    "phone": "0812-3456-7890",
+    "whatsapp": "6281234567890",
+    "email": "halo@renovkita.id",
     "address": "Tangerang, Banten",
     "yearsExperience": 8,
     "projectsCompleted": 150,
     "foundedYear": 2018,
-    "serviceAreas": ["Tangerang", "Serpong", "BSD City", "Alam Sutera", "Ciledug"]
+    "serviceAreas": [
+      "Tangerang",
+      "Serpong",
+      "BSD City",
+      "Alam Sutera",
+      "Ciledug"
+    ]
   },
   "promos": [
     {
@@ -38,56 +44,56 @@
     {
       "id": "dapur",
       "name": "Renovasi Dapur",
-      "icon": "🍳",
+      "icon": "icon-kitchen.svg",
       "desc": "Kitchen set custom, tata ulang layout, upgrade instalasi air & listrik",
       "priceFrom": 8000000
     },
     {
       "id": "kamar-mandi",
       "name": "Renovasi Kamar Mandi",
-      "icon": "🚿",
+      "icon": "icon-bathroom.svg",
       "desc": "Waterproofing, ganti keramik, sanitasi, atasi bocor & rembes",
       "priceFrom": 5000000
     },
     {
       "id": "atap",
       "name": "Atap & Plafon",
-      "icon": "🏠",
+      "icon": "icon-roof.svg",
       "desc": "Perbaikan atap bocor, ganti rangka baja ringan, plafon gypsum/PVC",
       "priceFrom": 4000000
     },
     {
       "id": "cat",
       "name": "Cat & Finishing",
-      "icon": "🎨",
+      "icon": "icon-paint.svg",
       "desc": "Cat interior & eksterior, garansi warna hingga 2 tahun",
       "priceFrom": 2000000
     },
     {
       "id": "lantai",
       "name": "Lantai",
-      "icon": "🧱",
+      "icon": "icon-floor.svg",
       "desc": "Pemasangan keramik, vinyl, parket, dan pengecoran ulang",
       "priceFrom": 3000000
     },
     {
       "id": "taman",
       "name": "Taman & Eksterior",
-      "icon": "🌿",
+      "icon": "icon-garden.svg",
       "desc": "Desain taman minimalis, carport, pagar & gerbang rumah",
       "priceFrom": 4000000
     },
     {
       "id": "listrik",
       "name": "Listrik & Instalasi",
-      "icon": "💡",
+      "icon": "icon-electrical.svg",
       "desc": "Instalasi ulang, tambah daya, perbaikan panel listrik",
       "priceFrom": 2500000
     },
     {
       "id": "total",
       "name": "Renovasi Total Rumah",
-      "icon": "🏗️",
+      "icon": "icon-general.svg",
       "desc": "Renovasi menyeluruh dari struktur hingga finishing",
       "priceFrom": 50000000
     }
@@ -149,8 +155,20 @@
     }
   ],
   "testimonials": [
-    { "name": "Dewi A.", "location": "Gading Serpong", "text": "Rapi, tepat waktu, sesuai estimasi dari awal. Komunikasi juga enak, selalu update progress." },
-    { "name": "Budi H.", "location": "BSD City", "text": "Masalah bocor kamar mandi yang sudah 2 tahun akhirnya beres total, garansi juga jelas." },
-    { "name": "Rina S.", "location": "Alam Sutera", "text": "Hasil dapur barunya rapi banget, sesuai gambar 3D yang dikasih di awal." }
+    {
+      "name": "Dewi A.",
+      "location": "Gading Serpong",
+      "text": "Rapi, tepat waktu, sesuai estimasi dari awal. Komunikasi juga enak, selalu update progress."
+    },
+    {
+      "name": "Budi H.",
+      "location": "BSD City",
+      "text": "Masalah bocor kamar mandi yang sudah 2 tahun akhirnya beres total, garansi juga jelas."
+    },
+    {
+      "name": "Rina S.",
+      "location": "Alam Sutera",
+      "text": "Hasil dapur barunya rapi banget, sesuai gambar 3D yang dikasih di awal."
+    }
   ]
 }

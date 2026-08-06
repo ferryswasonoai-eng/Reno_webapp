@@ -25,8 +25,8 @@ async function loadPromos() {
 
 function serviceCardHtml(s) {
   return `
-  <a class="service-card" href="/layanan.html#${s.id}">
-    <div class="emoji">${s.icon}</div>
+  <a class="service-card" href="/estimasi.html?service=${s.id}">
+    <img class="emoji" src="images/icons/${s.icon}" alt="${s.name}" />
     <div class="name">${s.name}</div>
     <div class="desc">${s.desc}</div>
     <div class="price">Mulai dari <b>${formatRupiah(s.priceFrom)}</b></div>
@@ -42,7 +42,7 @@ async function loadServices() {
 function portfolioCardHtml(p) {
   return `
   <div class="portfolio-card">
-    <div class="portfolio-thumb">📷</div>
+    <div class="portfolio-thumb"><img src="images/icons/icon-camera.svg" alt="Foto proyek" /></div>
     <div class="portfolio-body">
       <span class="portfolio-cat">${p.category}</span>
       <div class="portfolio-title">${p.title}</div>
