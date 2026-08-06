@@ -83,7 +83,7 @@
       "icon": "icon-floor.svg",
       "desc": "Pemasangan keramik, vinyl, parket, dan pengecoran ulang",
       "priceFrom": 3000000,
-      "image": "rakit-furniture.jpg",
+      "image": "pasang-lantai.jpg",
       "badge": "Rapi & Kuat"
     },
     {
@@ -92,7 +92,7 @@
       "icon": "icon-garden.svg",
       "desc": "Desain taman minimalis, carport, pagar & gerbang rumah",
       "priceFrom": 4000000,
-      "image": "handyman.jpg",
+      "image": "taman-eksterior.jpg",
       "badge": "Desain Gratis"
     },
     {
@@ -101,7 +101,7 @@
       "icon": "icon-electrical.svg",
       "desc": "Instalasi ulang, tambah daya, perbaikan panel listrik",
       "priceFrom": 2500000,
-      "image": "servis-ac.jpg",
+      "image": "listrik-instalasi.jpg",
       "badge": "Bersertifikat"
     },
     {
@@ -173,7 +173,7 @@
       "duration": "1 minggu",
       "budget": "Rp 10 - 12 juta",
       "desc": "Desain taman minimalis depan rumah lengkap dengan carport dan pagar baru.",
-      "image": "handyman.jpg"
+      "image": "taman-eksterior.jpg"
     }
   ],
   "testimonials": [
