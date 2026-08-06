@@ -85,9 +85,9 @@ button { font-family: inherit; cursor: pointer; }
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: var(--radius);
   min-height: 260px;
-  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
 }
-.hero-visual img { width: 96px; height: 96px; }
+.hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ---------- Promo strip ---------- */
 .promo-strip { display: flex; gap: 14px; overflow-x: auto; padding: 22px 0; }
@@ -114,10 +114,19 @@ button { font-family: inherit; cursor: pointer; }
 .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .service-card {
   background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 20px 16px; transition: transform 0.15s, box-shadow 0.15s;
+  overflow: hidden; transition: transform 0.15s, box-shadow 0.15s; display: block;
 }
 .service-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); border-color: var(--brand); }
-.service-card .emoji { width: 40px; height: 40px; margin-bottom: 8px; display: block; }
+.service-media { position: relative; height: 140px; }
+.service-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.service-chip {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--brand); color: #fff;
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
+  padding: 4px 10px; border-radius: 999px;
+}
+.service-body { padding: 16px; }
+.service-num { font-size: 12px; font-weight: 700; color: var(--brand); margin-bottom: 4px; }
 .service-card .name { font-weight: 700; font-size: 15px; }
 .service-card .desc { font-size: 12px; color: var(--muted); margin: 6px 0 10px; line-height: 1.5; min-height: 48px; }
 .service-card .price { font-size: 12px; color: var(--muted); }
@@ -132,9 +141,9 @@ button { font-family: inherit; cursor: pointer; }
 .portfolio-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
 .portfolio-thumb {
   height: 140px; background: linear-gradient(135deg, #dce7de, #eef2ec);
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
 }
-.portfolio-thumb img { width: 48px; height: 48px; opacity: 0.7; }
+.portfolio-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .portfolio-body { padding: 16px; }
 .portfolio-cat {
   display: inline-block; font-size: 10.5px; font-weight: 700; color: var(--brand);
@@ -221,10 +230,11 @@ button { font-family: inherit; cursor: pointer; }
 /* ---------- About page ---------- */
 .about-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
 .about-visual {
-  background: linear-gradient(135deg, #dce7de, #eef2ec); border-radius: var(--radius);
-  min-height: 220px; display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius);
+  min-height: 220px;
+  overflow: hidden;
 }
-.about-visual img { width: 90px; height: 90px; }
+.about-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .legal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 .legal-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; display: flex; gap: 12px; align-items: center; }
 .legal-card .ico { width: 28px; height: 28px; flex-shrink: 0; }

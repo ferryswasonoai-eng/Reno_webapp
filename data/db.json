@@ -2,8 +2,8 @@
   "company": {
     "name": "RenovKita",
     "tagline": "Renovasi Rumah & Properti, Cepat, Rapi, dan Sesuai Anggaran",
-    "phone": "0812-3456-7890",
-    "whatsapp": "6281234567890",
+    "phone": "0811-7255-11",
+    "whatsapp": "62811725511",
     "email": "halo@renovkita.id",
     "address": "Tangerang, Banten",
     "yearsExperience": 8,
@@ -46,56 +46,72 @@
       "name": "Renovasi Dapur",
       "icon": "icon-kitchen.svg",
       "desc": "Kitchen set custom, tata ulang layout, upgrade instalasi air & listrik",
-      "priceFrom": 8000000
+      "priceFrom": 8000000,
+      "image": "rakit-furniture.jpg",
+      "badge": "Terlaris"
     },
     {
       "id": "kamar-mandi",
       "name": "Renovasi Kamar Mandi",
       "icon": "icon-bathroom.svg",
       "desc": "Waterproofing, ganti keramik, sanitasi, atasi bocor & rembes",
-      "priceFrom": 5000000
+      "priceFrom": 5000000,
+      "image": "handyman.jpg",
+      "badge": "Anti Bocor"
     },
     {
       "id": "atap",
       "name": "Atap & Plafon",
       "icon": "icon-roof.svg",
       "desc": "Perbaikan atap bocor, ganti rangka baja ringan, plafon gypsum/PVC",
-      "priceFrom": 4000000
+      "priceFrom": 4000000,
+      "image": "servis-ac.jpg",
+      "badge": "Respon Cepat"
     },
     {
       "id": "cat",
       "name": "Cat & Finishing",
       "icon": "icon-paint.svg",
       "desc": "Cat interior & eksterior, garansi warna hingga 2 tahun",
-      "priceFrom": 2000000
+      "priceFrom": 2000000,
+      "image": "rakit-furniture.jpg",
+      "badge": "Garansi 2 Thn"
     },
     {
       "id": "lantai",
       "name": "Lantai",
       "icon": "icon-floor.svg",
       "desc": "Pemasangan keramik, vinyl, parket, dan pengecoran ulang",
-      "priceFrom": 3000000
+      "priceFrom": 3000000,
+      "image": "handyman.jpg",
+      "badge": "Rapi & Kuat"
     },
     {
       "id": "taman",
       "name": "Taman & Eksterior",
       "icon": "icon-garden.svg",
       "desc": "Desain taman minimalis, carport, pagar & gerbang rumah",
-      "priceFrom": 4000000
+      "priceFrom": 4000000,
+      "image": "servis-ac.jpg",
+      "badge": "Desain Gratis"
     },
     {
       "id": "listrik",
       "name": "Listrik & Instalasi",
       "icon": "icon-electrical.svg",
       "desc": "Instalasi ulang, tambah daya, perbaikan panel listrik",
-      "priceFrom": 2500000
+      "priceFrom": 2500000,
+      "image": "servis-ac.jpg",
+      "badge": "Bersertifikat"
     },
     {
       "id": "total",
       "name": "Renovasi Total Rumah",
       "icon": "icon-general.svg",
       "desc": "Renovasi menyeluruh dari struktur hingga finishing",
-      "priceFrom": 50000000
+      "priceFrom": 50000000,
+      "image": "rakit-furniture.jpg",
+      "badge": "Proyek Besar"
     }
   ],
   "portfolio": [
@@ -106,7 +122,8 @@
       "location": "Gading Serpong",
       "duration": "3 minggu",
       "budget": "Rp 25 - 30 juta",
-      "desc": "Ubah dapur tertutup jadi open kitchen dengan island counter dan kabinet custom."
+      "desc": "Ubah dapur tertutup jadi open kitchen dengan island counter dan kabinet custom.",
+      "image": "rakit-furniture.jpg"
     },
     {
       "id": "pf002",
@@ -115,7 +132,8 @@
       "location": "BSD City",
       "duration": "2 minggu",
       "budget": "Rp 12 - 15 juta",
-      "desc": "Atasi masalah rembes kronis, waterproofing menyeluruh, ganti keramik & sanitasi."
+      "desc": "Atasi masalah rembes kronis, waterproofing menyeluruh, ganti keramik & sanitasi.",
+      "image": "handyman.jpg"
     },
     {
       "id": "pf003",
@@ -124,7 +142,8 @@
       "location": "Ciledug",
       "duration": "1.5 minggu",
       "budget": "Rp 8 - 10 juta",
-      "desc": "Ganti rangka atap yang lapuk dengan baja ringan, pasang ulang genteng dan plafon."
+      "desc": "Ganti rangka atap yang lapuk dengan baja ringan, pasang ulang genteng dan plafon.",
+      "image": "servis-ac.jpg"
     },
     {
       "id": "pf004",
@@ -133,7 +152,8 @@
       "location": "Alam Sutera",
       "duration": "1 minggu",
       "budget": "Rp 6 - 8 juta",
-      "desc": "Cat eksterior dan interior rumah 2 lantai, termasuk perbaikan retak rambut dinding."
+      "desc": "Cat eksterior dan interior rumah 2 lantai, termasuk perbaikan retak rambut dinding.",
+      "image": "rakit-furniture.jpg"
     },
     {
       "id": "pf005",
@@ -142,7 +162,8 @@
       "location": "Serpong",
       "duration": "3 bulan",
       "budget": "Rp 180 - 220 juta",
-      "desc": "Renovasi menyeluruh rumah 1 lantai jadi 2 lantai, termasuk perkuatan struktur."
+      "desc": "Renovasi menyeluruh rumah 1 lantai jadi 2 lantai, termasuk perkuatan struktur.",
+      "image": "handyman.jpg"
     },
     {
       "id": "pf006",
@@ -151,7 +172,8 @@
       "location": "Gading Serpong",
       "duration": "1 minggu",
       "budget": "Rp 10 - 12 juta",
-      "desc": "Desain taman minimalis depan rumah lengkap dengan carport dan pagar baru."
+      "desc": "Desain taman minimalis depan rumah lengkap dengan carport dan pagar baru.",
+      "image": "servis-ac.jpg"
     }
   ],
   "testimonials": [

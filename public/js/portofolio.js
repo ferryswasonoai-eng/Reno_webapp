@@ -3,7 +3,7 @@ let activeCategory = "";
 function portfolioCardHtml(p) {
   return `
   <div class="portfolio-card">
-    <div class="portfolio-thumb"><img src="images/icons/icon-camera.svg" alt="Foto proyek" /></div>
+    <div class="portfolio-thumb"><img src="images/services/${p.image}" alt="${p.title}" /></div>
     <div class="portfolio-body">
       <span class="portfolio-cat">${p.category}</span>
       <div class="portfolio-title">${p.title}</div>

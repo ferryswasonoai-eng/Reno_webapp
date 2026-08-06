@@ -23,13 +23,19 @@ async function loadPromos() {
     .join("");
 }
 
-function serviceCardHtml(s) {
+function serviceCardHtml(s, index) {
   return `
   <a class="service-card" href="/estimasi.html?service=${s.id}">
-    <img class="emoji" src="images/icons/${s.icon}" alt="${s.name}" />
-    <div class="name">${s.name}</div>
-    <div class="desc">${s.desc}</div>
-    <div class="price">Mulai dari <b>${formatRupiah(s.priceFrom)}</b></div>
+    <div class="service-media">
+      <span class="service-chip">${s.badge}</span>
+      <img src="images/services/${s.image}" alt="${s.name}" />
+    </div>
+    <div class="service-body">
+      <div class="service-num">0${index + 1}</div>
+      <div class="name">${s.name}</div>
+      <div class="desc">${s.desc}</div>
+      <div class="price">Mulai dari <b>${formatRupiah(s.priceFrom)}</b></div>
+    </div>
   </a>`;
 }
 
@@ -42,7 +48,7 @@ async function loadServices() {
 function portfolioCardHtml(p) {
   return `
   <div class="portfolio-card">
-    <div class="portfolio-thumb"><img src="images/icons/icon-camera.svg" alt="Foto proyek" /></div>
+    <div class="portfolio-thumb"><img src="images/services/${p.image}" alt="${p.title}" /></div>
     <div class="portfolio-body">
       <span class="portfolio-cat">${p.category}</span>
       <div class="portfolio-title">${p.title}</div>
