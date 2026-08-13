@@ -44,7 +44,6 @@
     {
       "id": "dapur",
       "name": "Renovasi Dapur",
-      "icon": "icon-kitchen.svg",
       "desc": "Kitchen set custom, tata ulang layout, upgrade instalasi air & listrik",
       "priceFrom": 8000000,
       "image": "renovasi-dapur-total.jpg",
@@ -53,7 +52,6 @@
     {
       "id": "kamar-mandi",
       "name": "Renovasi Kamar Mandi",
-      "icon": "icon-bathroom.svg",
       "desc": "Waterproofing, ganti keramik, sanitasi, atasi bocor & rembes",
       "priceFrom": 5000000,
       "image": "perbaikan-kebocoran.jpg",
@@ -62,7 +60,6 @@
     {
       "id": "atap",
       "name": "Atap & Plafon",
-      "icon": "icon-roof.svg",
       "desc": "Perbaikan atap bocor, ganti rangka baja ringan, plafon gypsum/PVC",
       "priceFrom": 4000000,
       "image": "kebocoran-atap.jpg",
@@ -71,7 +68,6 @@
     {
       "id": "cat",
       "name": "Cat & Finishing",
-      "icon": "icon-paint.svg",
       "desc": "Cat interior & eksterior, garansi warna hingga 2 tahun",
       "priceFrom": 2000000,
       "image": "pengecatan-dinding.jpg",
@@ -80,7 +76,6 @@
     {
       "id": "lantai",
       "name": "Lantai",
-      "icon": "icon-floor.svg",
       "desc": "Pemasangan keramik, vinyl, parket, dan pengecoran ulang",
       "priceFrom": 3000000,
       "image": "pasang-lantai.jpg",
@@ -89,7 +84,6 @@
     {
       "id": "taman",
       "name": "Taman & Eksterior",
-      "icon": "icon-garden.svg",
       "desc": "Desain taman minimalis, carport, pagar & gerbang rumah",
       "priceFrom": 4000000,
       "image": "taman-eksterior.jpg",
@@ -98,7 +92,6 @@
     {
       "id": "listrik",
       "name": "Listrik & Instalasi",
-      "icon": "icon-electrical.svg",
       "desc": "Instalasi ulang, tambah daya, perbaikan panel listrik",
       "priceFrom": 2500000,
       "image": "listrik-instalasi.jpg",
@@ -107,7 +100,6 @@
     {
       "id": "total",
       "name": "Renovasi Total Rumah",
-      "icon": "icon-general.svg",
       "desc": "Renovasi menyeluruh dari struktur hingga finishing",
       "priceFrom": 50000000,
       "image": "renovasi-total-2.jpg",
@@ -174,6 +166,16 @@
       "budget": "Rp 10 - 12 juta",
       "desc": "Desain taman minimalis depan rumah lengkap dengan carport dan pagar baru.",
       "image": "taman-eksterior.jpg"
+    },
+    {
+      "id": "pf007",
+      "title": "Renovasi Fasad Rumah 3 Lantai Modern",
+      "category": "Renovasi Total",
+      "location": "BSD City",
+      "duration": "4 bulan",
+      "budget": "Rp 250 - 300 juta",
+      "desc": "Renovasi total fasad rumah 3 lantai bergaya modern minimalis — cladding marmer, panel dekoratif ukir custom, railing balkon kaca, dan carport granite tile.",
+      "image": "rumah-3lantai-depan.jpg"
     }
   ],
   "testimonials": [

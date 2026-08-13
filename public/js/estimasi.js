@@ -7,7 +7,7 @@ async function loadServiceOptions() {
   servicesCache = await res.json();
   const select = document.getElementById("f-service");
   select.innerHTML = servicesCache
-    .map((s) => `<option value="${s.id}" ${s.id === preselectedService ? "selected" : ""}>${s.icon} ${s.name}</option>`)
+    .map((s) => `<option value="${s.id}" ${s.id === preselectedService ? "selected" : ""}>${s.name}</option>`)
     .join("");
 }
 
