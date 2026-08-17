@@ -1,9 +1,16 @@
 let activeCategory = "";
 
 function portfolioCardHtml(p) {
+  const imagesJson = JSON.stringify(p.images).replace(/"/g, "&quot;");
+  const photoBadge = p.images.length > 1
+    ? `<span class="portfolio-photo-badge">📷 ${p.images.length} foto</span>`
+    : "";
   return `
-  <div class="portfolio-card">
-    <div class="portfolio-thumb"><img src="images/services/${p.image}" alt="${p.title}" /></div>
+  <div class="portfolio-card" data-portfolio-images="${imagesJson}" data-portfolio-title="${p.title}" data-portfolio-id="${p.id}">
+    <div class="portfolio-thumb">
+      <img src="images/services/${p.images[0]}" alt="${p.title}" />
+      ${photoBadge}
+    </div>
     <div class="portfolio-body">
       <span class="portfolio-cat">${p.category}</span>
       <div class="portfolio-title">${p.title}</div>
@@ -21,6 +28,22 @@ async function loadPortfolio() {
   document.getElementById("portfolio-grid-full").innerHTML = portfolio.length
     ? portfolio.map(portfolioCardHtml).join("")
     : `<p style="color:var(--muted);">Belum ada portofolio untuk kategori ini.</p>`;
+  attachPortfolioLightbox("#portfolio-grid-full");
+  openFromUrlIfPresent(portfolio);
+}
+
+// Kalau URL mengandung ?project=ID (link yang dibagikan dari tombol "Salin Link"),
+// otomatis scroll ke kartu itu dan buka popup galerinya.
+function openFromUrlIfPresent(portfolio) {
+  const projectId = new URLSearchParams(window.location.search).get("project");
+  if (!projectId) return;
+  const item = portfolio.find((p) => p.id === projectId);
+  if (!item) return;
+
+  const card = document.querySelector(`[data-portfolio-id="${projectId}"]`);
+  if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
+
+  setTimeout(() => openLightbox(item.images, item.title, 0, item.id), 300);
 }
 
 async function loadCategoryFilter() {

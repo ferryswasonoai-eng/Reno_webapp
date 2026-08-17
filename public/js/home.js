@@ -46,9 +46,16 @@ async function loadServices() {
 }
 
 function portfolioCardHtml(p) {
+  const imagesJson = JSON.stringify(p.images).replace(/"/g, "&quot;");
+  const photoBadge = p.images.length > 1
+    ? `<span class="portfolio-photo-badge">📷 ${p.images.length} foto</span>`
+    : "";
   return `
-  <div class="portfolio-card">
-    <div class="portfolio-thumb"><img src="images/services/${p.image}" alt="${p.title}" /></div>
+  <div class="portfolio-card" data-portfolio-images="${imagesJson}" data-portfolio-title="${p.title}" data-portfolio-id="${p.id}">
+    <div class="portfolio-thumb">
+      <img src="images/services/${p.images[0]}" alt="${p.title}" />
+      ${photoBadge}
+    </div>
     <div class="portfolio-body">
       <span class="portfolio-cat">${p.category}</span>
       <div class="portfolio-title">${p.title}</div>
@@ -62,7 +69,24 @@ function portfolioCardHtml(p) {
 async function loadPortfolio() {
   const res = await fetch("/api/portfolio");
   const portfolio = await res.json();
-  document.getElementById("portfolio-grid").innerHTML = portfolio.slice(0, 3).map(portfolioCardHtml).join("");
+  const preview = portfolio.slice(0, 3);
+  document.getElementById("portfolio-grid").innerHTML = preview.map(portfolioCardHtml).join("");
+  attachPortfolioLightbox("#portfolio-grid");
+
+  // Kalau link ?project=ID dibagikan dari homepage, tapi proyeknya tidak
+  // termasuk 3 yang ditampilkan di sini, arahkan ke halaman Portofolio lengkap.
+  const projectId = new URLSearchParams(window.location.search).get("project");
+  if (projectId) {
+    const inPreview = preview.some((p) => p.id === projectId);
+    if (inPreview) {
+      setTimeout(() => {
+        const item = preview.find((p) => p.id === projectId);
+        openLightbox(item.images, item.title, 0, item.id);
+      }, 300);
+    } else if (portfolio.some((p) => p.id === projectId)) {
+      window.location.href = `/portofolio.html?project=${projectId}`;
+    }
+  }
 }
 
 function testiCardHtml(t) {
