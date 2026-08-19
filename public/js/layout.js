@@ -14,8 +14,9 @@ function renderHeader() {
   <header class="header">
     <div class="container">
       <a href="/" class="logo">
-        <span class="mark">🛠️</span>
-        RenovKita
+        <span class="logo-img-wrap">
+          <img src="images/logo-renovbsd.png" alt="RenovBSD" class="logo-img" />
+        </span>
       </a>
       <nav class="main-nav">
         <a href="/">Beranda</a>
