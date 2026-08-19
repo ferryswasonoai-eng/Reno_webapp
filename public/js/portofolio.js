@@ -1,15 +1,11 @@
 let activeCategory = "";
 
 function portfolioCardHtml(p) {
-  const imagesJson = JSON.stringify(p.images).replace(/"/g, "&quot;");
-  const photoBadge = p.images.length > 1
-    ? `<span class="portfolio-photo-badge">📷 ${p.images.length} foto</span>`
-    : "";
   return `
-  <div class="portfolio-card" data-portfolio-images="${imagesJson}" data-portfolio-title="${p.title}" data-portfolio-id="${p.id}">
+  <div class="portfolio-card" data-portfolio-id="${p.id}">
     <div class="portfolio-thumb">
-      <img src="images/services/${p.images[0]}" alt="${p.title}" />
-      ${photoBadge}
+      ${buildThumbnailHtml(p.media, p.title)}
+      ${buildMediaBadge(p.media)}
     </div>
     <div class="portfolio-body">
       <span class="portfolio-cat">${p.category}</span>
@@ -28,7 +24,7 @@ async function loadPortfolio() {
   document.getElementById("portfolio-grid-full").innerHTML = portfolio.length
     ? portfolio.map(portfolioCardHtml).join("")
     : `<p style="color:var(--muted);">Belum ada portofolio untuk kategori ini.</p>`;
-  attachPortfolioLightbox("#portfolio-grid-full");
+  attachPortfolioLightbox("#portfolio-grid-full", portfolio);
   openFromUrlIfPresent(portfolio);
 }
 
@@ -43,7 +39,7 @@ function openFromUrlIfPresent(portfolio) {
   const card = document.querySelector(`[data-portfolio-id="${projectId}"]`);
   if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
 
-  setTimeout(() => openLightbox(item.images, item.title, 0, item.id), 300);
+  setTimeout(() => openPortfolioItemLightbox(item), 300);
 }
 
 async function loadCategoryFilter() {
@@ -52,9 +48,7 @@ async function loadCategoryFilter() {
   const categories = [...new Set(portfolio.map((p) => p.category))];
 
   const chip = (label, value) => `
-    <span class="pill" data-cat="${value}" style="cursor:pointer; ${
-      activeCategory === value ? "background:var(--brand); color:#fff; border-color:var(--brand);" : ""
-    }">${label}</span>`;
+    <span class="pill ${activeCategory === value ? "pill-active" : ""}" data-cat="${value}">${label}</span>`;
 
   document.getElementById("category-filter").innerHTML =
     chip("Semua", "") + categories.map((c) => chip(c, c)).join("");

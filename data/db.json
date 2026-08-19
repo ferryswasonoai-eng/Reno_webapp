@@ -1,10 +1,10 @@
 {
   "company": {
-    "name": "RenovBSD",
+    "name": "RenovKita",
     "tagline": "Renovasi Rumah & Properti, Cepat, Rapi, dan Sesuai Anggaran",
     "phone": "0811-7255-11",
     "whatsapp": "62811725511",
-    "email": "ferry.swasono.ai@gmail.com",
+    "email": "halo@renovkita.id",
     "address": "Tangerang, Banten",
     "yearsExperience": 8,
     "projectsCompleted": 150,
@@ -115,8 +115,11 @@
       "duration": "3 minggu",
       "budget": "Rp 25 - 30 juta",
       "desc": "Ubah dapur tertutup jadi open kitchen dengan island counter dan kabinet custom.",
-      "images": [
-        "renovasi-dapur-total.jpg"
+      "media": [
+        {
+          "type": "image",
+          "src": "renovasi-dapur-total.jpg"
+        }
       ]
     },
     {
@@ -127,8 +130,15 @@
       "duration": "2 minggu",
       "budget": "Rp 12 - 15 juta",
       "desc": "Atasi masalah rembes kronis, waterproofing menyeluruh, ganti keramik & sanitasi.",
-      "images": [
-        "perbaikan-kebocoran.jpg"
+      "media": [
+        {
+          "type": "image",
+          "src": "perbaikan-kebocoran.jpg"
+        },
+        {
+          "type": "video",
+          "src": "bathroom-kamar-mandi.mp4"
+        }
       ]
     },
     {
@@ -139,8 +149,11 @@
       "duration": "1.5 minggu",
       "budget": "Rp 8 - 10 juta",
       "desc": "Ganti rangka atap yang lapuk dengan baja ringan, pasang ulang genteng dan plafon.",
-      "images": [
-        "kebocoran-atap.jpg"
+      "media": [
+        {
+          "type": "image",
+          "src": "kebocoran-atap.jpg"
+        }
       ]
     },
     {
@@ -151,8 +164,11 @@
       "duration": "1 minggu",
       "budget": "Rp 6 - 8 juta",
       "desc": "Cat eksterior dan interior rumah 2 lantai, termasuk perbaikan retak rambut dinding.",
-      "images": [
-        "pengecatan-dinding.jpg"
+      "media": [
+        {
+          "type": "image",
+          "src": "pengecatan-dinding.jpg"
+        }
       ]
     },
     {
@@ -163,8 +179,23 @@
       "duration": "3 bulan",
       "budget": "Rp 180 - 220 juta",
       "desc": "Renovasi menyeluruh rumah 1 lantai jadi 2 lantai, termasuk perkuatan struktur.",
-      "images": [
-        "renovasi-total-2.jpg"
+      "media": [
+        {
+          "type": "image",
+          "src": "renovasi-total-2.jpg"
+        },
+        {
+          "type": "video",
+          "src": "ruang-tamu.mp4"
+        },
+        {
+          "type": "video",
+          "src": "ruang-anak-cowok.mp4"
+        },
+        {
+          "type": "video",
+          "src": "ruang-anak-cewek.mp4"
+        }
       ]
     },
     {
@@ -175,8 +206,11 @@
       "duration": "1 minggu",
       "budget": "Rp 10 - 12 juta",
       "desc": "Desain taman minimalis depan rumah lengkap dengan carport dan pagar baru.",
-      "images": [
-        "taman-eksterior.jpg"
+      "media": [
+        {
+          "type": "image",
+          "src": "taman-eksterior.jpg"
+        }
       ]
     },
     {
@@ -186,11 +220,38 @@
       "location": "BSD City",
       "duration": "4 bulan",
       "budget": "Rp 250 - 300 juta",
-      "desc": "Renovasi total fasad rumah 3 lantai bergaya modern minimalis — cladding marmer, panel dekoratif ukir custom, railing balkon kaca, dan carport granite tile.",
-      "images": [
-        "rumah-3lantai-depan.jpg",
-        "rumah-3lantai-samping.jpg",
-        "rumah-3lantai-carport.jpg"
+      "desc": "Renovasi fasad rumah 3 lantai bergaya modern minimalis dengan layout dua kolom, palet warna putih-abu muda-gold, dan ornamen dekoratif custom.",
+      "media": [
+        {
+          "type": "image",
+          "src": "rumah-3lantai-depan.jpg"
+        },
+        {
+          "type": "image",
+          "src": "rumah-3lantai-samping.jpg"
+        },
+        {
+          "type": "image",
+          "src": "rumah-3lantai-carport.jpg"
+        },
+        {
+          "type": "image",
+          "src": "rumah-3lantai-carport-2.jpg"
+        }
+      ],
+      "concept": "Fasad rumah sebagai visual utama dengan layout dua kolom, warna putih–abu muda–gold, serta gaya minimalis profesional.",
+      "scope": [
+        "Pekerjaan Fasad",
+        "Ornamen Dekoratif",
+        "Jendela & Bukaan",
+        "Balkon",
+        "Area Carport"
+      ],
+      "benefits": [
+        "Modern Minimalis",
+        "Estetika Mewah",
+        "Tahan Lama",
+        "Nyaman & Fungsional"
       ]
     }
   ],

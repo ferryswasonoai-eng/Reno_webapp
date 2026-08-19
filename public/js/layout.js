@@ -65,9 +65,9 @@ function renderWaFloat() {
   return `<a id="wa-float" class="wa-float" href="#" target="_blank" rel="noopener">💬</a>`;
 }
 
-// ---------- Lightbox galeri foto portofolio ----------
+// ---------- Lightbox galeri foto & video portofolio ----------
 
-let lightboxImages = [];
+let lightboxMedia = [];
 let lightboxIndex = 0;
 let lightboxShareId = null;
 
@@ -75,37 +75,90 @@ function renderLightbox() {
   return `
   <div id="lightbox-overlay" class="lightbox-overlay" aria-hidden="true">
     <button class="lightbox-close" id="lightbox-close" aria-label="Tutup">&times;</button>
-    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Foto sebelumnya">&#8249;</button>
-    <div class="lightbox-content">
-      <img id="lightbox-img" src="" alt="" />
-      <div class="lightbox-caption">
-        <span id="lightbox-title"></span>
-        <span id="lightbox-counter" class="lightbox-counter"></span>
-        <button id="lightbox-share" class="lightbox-share" style="display:none;">🔗 Salin Link Proyek Ini</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Sebelumnya">&#8249;</button>
+    <div class="lightbox-scroll">
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="" />
+        <video id="lightbox-video" controls playsinline style="display:none;"></video>
+        <div class="lightbox-caption">
+          <span id="lightbox-title"></span>
+          <span id="lightbox-counter" class="lightbox-counter"></span>
+          <button id="lightbox-share" class="lightbox-share" style="display:none;">🔗 Salin Link Proyek Ini</button>
+        </div>
+        <div id="lightbox-details" class="lightbox-details" style="display:none;"></div>
       </div>
     </div>
-    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Foto berikutnya">&#8250;</button>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Berikutnya">&#8250;</button>
   </div>`;
 }
 
-function updateLightboxImage() {
+function buildLightboxDetailsHtml(details) {
+  let html = "";
+  if (details.concept) {
+    html += `<p class="lightbox-concept">${details.concept}</p>`;
+  }
+  if (details.scope && details.scope.length) {
+    html += `
+      <div class="lightbox-tag-group">
+        <span class="lightbox-tag-label">Lingkup Pekerjaan</span>
+        <div class="lightbox-tags">${details.scope.map((s) => `<span class="lightbox-tag">${s}</span>`).join("")}</div>
+      </div>`;
+  }
+  if (details.benefits && details.benefits.length) {
+    html += `
+      <div class="lightbox-tag-group">
+        <span class="lightbox-tag-label">Manfaat</span>
+        <div class="lightbox-tags">${details.benefits.map((b) => `<span class="lightbox-tag lightbox-tag-benefit">${b}</span>`).join("")}</div>
+      </div>`;
+  }
+  return html;
+}
+
+function updateLightboxMedia() {
   const img = document.getElementById("lightbox-img");
+  const video = document.getElementById("lightbox-video");
   const counter = document.getElementById("lightbox-counter");
-  img.src = `images/services/${lightboxImages[lightboxIndex]}`;
-  counter.textContent = lightboxImages.length > 1
-    ? `${lightboxIndex + 1} / ${lightboxImages.length}`
+  const current = lightboxMedia[lightboxIndex];
+
+  // Hentikan video sebelumnya kalau lagi diputar, sebelum pindah slide
+  video.pause();
+  video.removeAttribute("src");
+  video.load();
+
+  if (current.type === "video") {
+    video.src = `videos/${current.src}`;
+    video.style.display = "block";
+    img.style.display = "none";
+  } else {
+    img.src = `images/services/${current.src}`;
+    img.style.display = "block";
+    video.style.display = "none";
+  }
+
+  counter.textContent = lightboxMedia.length > 1
+    ? `${lightboxIndex + 1} / ${lightboxMedia.length}`
     : "";
-  const multi = lightboxImages.length > 1;
+  const multi = lightboxMedia.length > 1;
   document.getElementById("lightbox-prev").style.display = multi ? "flex" : "none";
   document.getElementById("lightbox-next").style.display = multi ? "flex" : "none";
 }
 
-function openLightbox(images, title, startIndex = 0, shareId = null) {
-  lightboxImages = images;
+function openLightbox(media, title, startIndex = 0, shareId = null, details = null) {
+  // Dukung format lama (array string foto) supaya tidak ada yang error kalau ada sisa panggilan lama
+  lightboxMedia = media.map((m) => (typeof m === "string" ? { type: "image", src: m } : m));
   lightboxIndex = startIndex;
   lightboxShareId = shareId;
   document.getElementById("lightbox-title").textContent = title;
-  updateLightboxImage();
+  updateLightboxMedia();
+
+  const detailsEl = document.getElementById("lightbox-details");
+  const hasDetails = details && (details.concept || (details.scope && details.scope.length) || (details.benefits && details.benefits.length));
+  if (hasDetails) {
+    detailsEl.innerHTML = buildLightboxDetailsHtml(details);
+    detailsEl.style.display = "block";
+  } else {
+    detailsEl.style.display = "none";
+  }
 
   const shareBtn = document.getElementById("lightbox-share");
   if (shareId) {
@@ -130,6 +183,9 @@ function closeLightbox() {
   overlay.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 
+  const video = document.getElementById("lightbox-video");
+  video.pause();
+
   if (lightboxShareId) {
     const url = new URL(window.location.href);
     url.searchParams.delete("project");
@@ -139,13 +195,13 @@ function closeLightbox() {
 }
 
 function lightboxNext() {
-  lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
-  updateLightboxImage();
+  lightboxIndex = (lightboxIndex + 1) % lightboxMedia.length;
+  updateLightboxMedia();
 }
 
 function lightboxPrev() {
-  lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
-  updateLightboxImage();
+  lightboxIndex = (lightboxIndex - 1 + lightboxMedia.length) % lightboxMedia.length;
+  updateLightboxMedia();
 }
 
 function initLightbox() {
@@ -174,22 +230,52 @@ function initLightbox() {
   });
 }
 
-// Dipanggil dari home.js / portofolio.js lewat event delegation di grid portofolio
-function attachPortfolioLightbox(gridSelector) {
+// Dipanggil dari home.js / portofolio.js lewat event delegation di grid portofolio.
+// portfolioArray = array data lengkap hasil fetch /api/portfolio, dipakai untuk
+// lookup detail (media, concept, scope, benefits) berdasarkan id kartu yang diklik.
+function attachPortfolioLightbox(gridSelector, portfolioArray) {
   const grid = document.querySelector(gridSelector);
   if (!grid) return;
   grid.addEventListener("click", (e) => {
-    const card = e.target.closest("[data-portfolio-images]");
+    const card = e.target.closest("[data-portfolio-id]");
     if (!card) return;
-    const images = JSON.parse(card.getAttribute("data-portfolio-images"));
-    const title = card.getAttribute("data-portfolio-title");
     const id = card.getAttribute("data-portfolio-id");
-    openLightbox(images, title, 0, id || null);
+    const item = portfolioArray.find((p) => p.id === id);
+    if (!item) return;
+    openPortfolioItemLightbox(item);
+  });
+}
+
+// Helper terpusat: buka lightbox dari satu objek item portofolio lengkap
+function openPortfolioItemLightbox(item, startIndex = 0) {
+  openLightbox(item.media, item.title, startIndex, item.id, {
+    concept: item.concept,
+    scope: item.scope,
+    benefits: item.benefits,
   });
 }
 
 function formatRupiah(n) {
   return "Rp " + Number(n).toLocaleString("id-ID");
+}
+
+// Badge jumlah media di kartu portofolio, misal "📷 3" atau "🎬 5" kalau ada video
+function buildMediaBadge(media) {
+  if (media.length <= 1) return "";
+  const hasVideo = media.some((m) => m.type === "video");
+  const icon = hasVideo ? "🎬" : "📷";
+  return `<span class="portfolio-photo-badge">${icon} ${media.length}</span>`;
+}
+
+// Thumbnail kartu: pakai foto pertama kalau ada, kalau isinya video semua pakai overlay play
+function buildThumbnailHtml(media, title) {
+  const first = media[0];
+  if (first.type === "video") {
+    return `
+      <video src="videos/${first.src}" muted playsinline preload="metadata"></video>
+      <div class="thumb-play-overlay">▶</div>`;
+  }
+  return `<img src="images/services/${first.src}" alt="${title}" />`;
 }
 
 function buildWaLink(phoneNumber, message) {
