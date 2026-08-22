@@ -73,5 +73,5 @@ app.get(/^(?!\/api).*/, (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`RenovKita (company site) running on port ${PORT}`);
+  console.log(`RenovBSD (company site) running on port ${PORT}`);
 });

@@ -1,4 +1,4 @@
-# RenovKita — Website Perusahaan Renovasi (Company Profile)
+# RenovBSD — Website Perusahaan Renovasi (Company Profile)
 
 Versi ini **bukan marketplace multi-vendor** — ini website untuk perusahaan renovasi Anda
 sendiri. Tujuannya: tunjukkan layanan & portofolio, kasih estimasi biaya cepat, lalu arahkan
@@ -10,10 +10,10 @@ Buka file `data/db.json`, ganti bagian `"company"` dengan data asli Anda:
 
 ```json
 "company": {
-  "name": "RenovKita",
+  "name": "RenovBSD",
   "phone": "0812-3456-7890",
   "whatsapp": "6281234567890",   ← PENTING: format 62xxx tanpa tanda + atau 0 di depan
-  "email": "halo@renovkita.id",
+  "email": "halo@renovbsd.id",
   "address": "Tangerang, Banten",
   ...
 }
@@ -65,7 +65,7 @@ Sama seperti sebelumnya:
 cd renovkita-company
 git init
 git add .
-git commit -m "Initial commit: RenovKita company profile site"
+git commit -m "Initial commit: RenovBSD company profile site"
 git branch -M main
 git remote add origin https://github.com/USERNAME/NAMA-REPO.git
 git push -u origin main
@@ -84,4 +84,4 @@ Di Render.com:
   `public/images/` lalu ganti tag di `portofolio.js`/`home.js`
 - Tambah Google Analytics untuk lihat berapa orang isi form estimasi
 - Daftarkan di Google Business Profile supaya muncul di pencarian lokal & Google Maps
-- Custom domain (misal `renovkita.id`) lewat Render Settings → Custom Domain
+- Custom domain (misal `renovbsd.id`) lewat Render Settings → Custom Domain

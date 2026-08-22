@@ -37,7 +37,7 @@ function renderFooter() {
   <footer class="footer">
     <div class="container">
       <div>
-        <h5>RenovKita</h5>
+        <h5>RenovBSD</h5>
         <p id="footer-tagline"></p>
         <p id="footer-address"></p>
       </div>
@@ -56,7 +56,7 @@ function renderFooter() {
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 RenovKita. Website perusahaan renovasi properti.
+      © 2026 RenovBSD. Website perusahaan renovasi properti.
     </div>
   </footer>
   `;
@@ -305,11 +305,11 @@ async function mountLayout() {
     emailEl.href = "mailto:" + COMPANY.email;
     document.getElementById("footer-wa").href = buildWaLink(
       COMPANY.whatsapp,
-      "Halo RenovKita, saya ingin tanya-tanya soal renovasi rumah."
+      "Halo RenovBSD, saya ingin tanya-tanya soal renovasi rumah."
     );
     document.getElementById("wa-float").href = buildWaLink(
       COMPANY.whatsapp,
-      "Halo RenovKita, saya ingin tanya-tanya soal renovasi rumah."
+      "Halo RenovBSD, saya ingin tanya-tanya soal renovasi rumah."
     );
   } catch (e) {
     console.error("Gagal memuat data perusahaan", e);

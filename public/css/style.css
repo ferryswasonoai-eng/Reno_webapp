@@ -47,14 +47,11 @@ button { font-family: inherit; cursor: pointer; }
   white-space: nowrap;
 }
 .logo-img-wrap {
-  background: #fff;
-  padding: 6px 12px;
-  border-radius: 8px;
   display: flex;
   align-items: center;
 }
 .logo-img {
-  height: 30px;
+  height: 40px;
   width: auto;
   display: block;
 }

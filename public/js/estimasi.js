@@ -43,7 +43,7 @@ document.getElementById("estimate-form").addEventListener("submit", async (e) =>
   const notes = document.getElementById("f-notes").value || "-";
 
   const message =
-    `Halo RenovKita, saya ingin ajukan estimasi renovasi:\n\n` +
+    `Halo RenovBSD, saya ingin ajukan estimasi renovasi:\n\n` +
     `Nama: ${name}\n` +
     `No. HP: ${phone}\n` +
     `Jenis Layanan: ${getServiceName(serviceId)}\n` +
