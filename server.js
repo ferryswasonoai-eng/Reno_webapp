@@ -49,16 +49,59 @@ app.get("/api/testimonials", (req, res) => {
 });
 
 // Simple estimate calculator (mock formula, easy to replace with real pricing logic)
+// Tarif per m² per kategori layanan (material & jasa terpisah), disesuaikan
+// dengan kisaran harga pasaran jasa renovasi di Indonesia. Tiap kategori
+// pekerjaan punya karakter biaya yang beda jauh — dapur & renovasi total
+// jauh lebih mahal per m² dibanding cat atau listrik, jadi tidak realistis
+// kalau disamaratakan.
+const RATE_TABLE = {
+  dapur: {
+    standar: { material: 1800000, jasa: 700000 },
+    premium: { material: 3200000, jasa: 1200000 },
+  },
+  "kamar-mandi": {
+    standar: { material: 1500000, jasa: 600000 },
+    premium: { material: 2800000, jasa: 1000000 },
+  },
+  atap: {
+    standar: { material: 900000, jasa: 400000 },
+    premium: { material: 1600000, jasa: 700000 },
+  },
+  cat: {
+    standar: { material: 45000, jasa: 35000 },
+    premium: { material: 90000, jasa: 60000 },
+  },
+  lantai: {
+    standar: { material: 250000, jasa: 100000 },
+    premium: { material: 550000, jasa: 200000 },
+  },
+  taman: {
+    standar: { material: 400000, jasa: 200000 },
+    premium: { material: 900000, jasa: 400000 },
+  },
+  listrik: {
+    standar: { material: 150000, jasa: 100000 },
+    premium: { material: 300000, jasa: 180000 },
+  },
+  total: {
+    standar: { material: 2200000, jasa: 1000000 },
+    premium: { material: 4000000, jasa: 1800000 },
+  },
+};
+// Fallback kalau kategori tidak dikenali (mis. request lama tanpa field service)
+const DEFAULT_RATE = {
+  standar: { material: 1200000, jasa: 500000 },
+  premium: { material: 2200000, jasa: 1000000 },
+};
+
 app.post("/api/estimate", (req, res) => {
-  const { areaM2 = 10, quality = "menengah" } = req.body;
-  const materialRatePerM2 = { standar: 1200000, menengah: 1550000, premium: 2200000 };
-  const laborRatePerM2 = { standar: 500000, menengah: 750000, premium: 1000000 };
+  const { areaM2 = 10, quality = "standar", service } = req.body;
+  const safeQuality = quality === "premium" ? "premium" : "standar";
 
-  const rate = materialRatePerM2[quality] || materialRatePerM2.menengah;
-  const labor = laborRatePerM2[quality] || laborRatePerM2.menengah;
+  const rates = (RATE_TABLE[service] || DEFAULT_RATE)[safeQuality];
 
-  const material = Math.round(areaM2 * rate);
-  const jasa = Math.round(areaM2 * labor);
+  const material = Math.round(areaM2 * rates.material);
+  const jasa = Math.round(areaM2 * rates.jasa);
 
   res.json({
     material,

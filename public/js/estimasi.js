@@ -21,11 +21,12 @@ document.getElementById("estimate-form").addEventListener("submit", async (e) =>
 
   const areaM2 = Number(document.getElementById("f-area").value) || 10;
   const quality = document.getElementById("f-quality").value;
+  const serviceId = document.getElementById("f-service").value;
 
   const res = await fetch("/api/estimate", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ areaM2, quality }),
+    body: JSON.stringify({ areaM2, quality, service: serviceId }),
   });
   const data = await res.json();
   lastEstimate = data;
@@ -38,7 +39,6 @@ document.getElementById("estimate-form").addEventListener("submit", async (e) =>
   // Susun pesan WhatsApp otomatis berisi semua data form + hasil estimasi
   const name = document.getElementById("f-name").value;
   const phone = document.getElementById("f-phone").value;
-  const serviceId = document.getElementById("f-service").value;
   const location = document.getElementById("f-location").value || "-";
   const notes = document.getElementById("f-notes").value || "-";
 
