@@ -290,7 +290,7 @@ async function mountLayout() {
   initLightbox();
 
   try {
-    const res = await fetch("/api/company");
+    const res = await fetch("/api/company.json");
     COMPANY = await res.json();
 
     document.getElementById("topbar-contact").innerHTML =

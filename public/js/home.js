@@ -1,5 +1,5 @@
 async function loadHeroStats() {
-  const res = await fetch("/api/company");
+  const res = await fetch("/api/company.json");
   const c = await res.json();
   document.getElementById("hero-stats").innerHTML = `
     <div class="hero-stat"><div class="num">${c.yearsExperience}+</div><div class="label">Tahun Pengalaman</div></div>
@@ -9,7 +9,7 @@ async function loadHeroStats() {
 }
 
 async function loadPromos() {
-  const res = await fetch("/api/promos");
+  const res = await fetch("/api/promos.json");
   const promos = await res.json();
   document.getElementById("promo-strip").innerHTML = promos
     .map(
@@ -40,7 +40,7 @@ function serviceCardHtml(s, index) {
 }
 
 async function loadServices() {
-  const res = await fetch("/api/services");
+  const res = await fetch("/api/services.json");
   const services = await res.json();
   document.getElementById("service-grid").innerHTML = services.slice(0, 3).map(serviceCardHtml).join("");
 }
@@ -63,7 +63,7 @@ function portfolioCardHtml(p) {
 }
 
 async function loadPortfolio() {
-  const res = await fetch("/api/portfolio");
+  const res = await fetch("/api/portfolio.json");
   const portfolio = await res.json();
   const preview = portfolio.slice(0, 3);
   document.getElementById("portfolio-grid").innerHTML = preview.map(portfolioCardHtml).join("");
@@ -93,7 +93,7 @@ function testiCardHtml(t) {
 }
 
 async function loadTestimonials() {
-  const res = await fetch("/api/testimonials");
+  const res = await fetch("/api/testimonials.json");
   const testimonials = await res.json();
   document.getElementById("testi-grid").innerHTML = testimonials.map(testiCardHtml).join("");
 }

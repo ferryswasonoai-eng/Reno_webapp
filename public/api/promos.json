@@ -1,0 +1,23 @@
+[
+ {
+  "id": 1,
+  "title": "Survei Lokasi Gratis Bulan Ini",
+  "subtitle": "Untuk renovasi dapur & kamar mandi, tanpa biaya survei",
+  "cta": "Ajukan Estimasi",
+  "bg": "#145A32"
+ },
+ {
+  "id": 2,
+  "title": "150+ Proyek Selesai Sejak 2018",
+  "subtitle": "Dikerjakan tim berpengalaman dengan garansi tertulis",
+  "cta": "Lihat Portofolio",
+  "bg": "#8A3B12"
+ },
+ {
+  "id": 3,
+  "title": "Cicilan 0% hingga 6 Bulan",
+  "subtitle": "Untuk proyek renovasi di atas Rp 15 juta lewat mitra pembiayaan",
+  "cta": "Pelajari",
+  "bg": "#1B2A4A"
+ }
+]

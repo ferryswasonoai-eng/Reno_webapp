@@ -15,7 +15,7 @@ function serviceCardHtml(s, index) {
 }
 
 async function loadAllServices() {
-  const res = await fetch("/api/services");
+  const res = await fetch("/api/services.json");
   const services = await res.json();
   document.getElementById("service-grid-full").innerHTML = services.map(serviceCardHtml).join("");
 }

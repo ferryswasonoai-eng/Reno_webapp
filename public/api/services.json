@@ -1,0 +1,66 @@
+[
+ {
+  "id": "dapur",
+  "name": "Renovasi Dapur",
+  "desc": "Kitchen set custom, tata ulang layout, upgrade instalasi air & listrik",
+  "priceFrom": 8000000,
+  "image": "renovasi-dapur-total.jpg",
+  "badge": "Terlaris"
+ },
+ {
+  "id": "kamar-mandi",
+  "name": "Renovasi Kamar Mandi",
+  "desc": "Waterproofing, ganti keramik, sanitasi, atasi bocor & rembes",
+  "priceFrom": 5000000,
+  "image": "perbaikan-kebocoran.jpg",
+  "badge": "Anti Bocor"
+ },
+ {
+  "id": "atap",
+  "name": "Atap & Plafon",
+  "desc": "Perbaikan atap bocor, ganti rangka baja ringan, plafon gypsum/PVC",
+  "priceFrom": 4000000,
+  "image": "kebocoran-atap.jpg",
+  "badge": "Respon Cepat"
+ },
+ {
+  "id": "cat",
+  "name": "Cat & Finishing",
+  "desc": "Cat interior & eksterior, garansi warna hingga 2 tahun",
+  "priceFrom": 2000000,
+  "image": "pengecatan-dinding.jpg",
+  "badge": "Garansi 2 Thn"
+ },
+ {
+  "id": "lantai",
+  "name": "Lantai",
+  "desc": "Pemasangan keramik, vinyl, parket, dan pengecoran ulang",
+  "priceFrom": 3000000,
+  "image": "pasang-lantai.jpg",
+  "badge": "Rapi & Kuat"
+ },
+ {
+  "id": "taman",
+  "name": "Taman & Eksterior",
+  "desc": "Desain taman minimalis, carport, pagar & gerbang rumah",
+  "priceFrom": 4000000,
+  "image": "taman-eksterior.jpg",
+  "badge": "Desain Gratis"
+ },
+ {
+  "id": "listrik",
+  "name": "Listrik & Instalasi",
+  "desc": "Instalasi ulang, tambah daya, perbaikan panel listrik",
+  "priceFrom": 2500000,
+  "image": "listrik-instalasi.jpg",
+  "badge": "Bersertifikat"
+ },
+ {
+  "id": "total",
+  "name": "Renovasi Total Rumah",
+  "desc": "Renovasi menyeluruh dari struktur hingga finishing",
+  "priceFrom": 50000000,
+  "image": "renovasi-total-2.jpg",
+  "badge": "Proyek Besar"
+ }
+]

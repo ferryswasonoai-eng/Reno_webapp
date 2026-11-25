@@ -18,9 +18,11 @@ function portfolioCardHtml(p) {
 }
 
 async function loadPortfolio() {
-  const qs = activeCategory ? `?category=${encodeURIComponent(activeCategory)}` : "";
-  const res = await fetch("/api/portfolio" + qs);
-  const portfolio = await res.json();
+  const res = await fetch("/api/portfolio.json");
+  let portfolio = await res.json();
+  if (activeCategory) {
+    portfolio = portfolio.filter((p) => p.category.toLowerCase() === activeCategory.toLowerCase());
+  }
   document.getElementById("portfolio-grid-full").innerHTML = portfolio.length
     ? portfolio.map(portfolioCardHtml).join("")
     : `<p style="color:var(--muted);">Belum ada portofolio untuk kategori ini.</p>`;
@@ -43,7 +45,7 @@ function openFromUrlIfPresent(portfolio) {
 }
 
 async function loadCategoryFilter() {
-  const res = await fetch("/api/portfolio");
+  const res = await fetch("/api/portfolio.json");
   const portfolio = await res.json();
   const categories = [...new Set(portfolio.map((p) => p.category))];
 

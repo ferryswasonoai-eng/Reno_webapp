@@ -1,5 +1,5 @@
 async function loadAbout() {
-  const res = await fetch("/api/company");
+  const res = await fetch("/api/company.json");
   const c = await res.json();
 
   document.getElementById("about-text").innerHTML = `
